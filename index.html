@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankara Madeni Yağ | Toptan Sipariş ve Fiyat Teklifi</title>
+    <meta name="description" content="Ankara Madeni Yağ Ostim. Akıllı yağ seçici ile aracınıza uygun motor, şanzıman ve hidrolik yağını bulun, WhatsApp'tan anında sipariş verin.">
+    
+    <style>
+        :root { --primary: #004a99; --secondary: #d32f2f; --whatsapp: #25D366; --bg: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: var(--bg); text-align: center; }
+        .container { max-width: 1100px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        img.logo { max-width: 250px; height: auto; margin-bottom: 10px; }
+        h1 { color: var(--primary); margin-bottom: 5px; font-size: 26px; }
+        
+        /* Akıllı Filtre ve Arama Alanı */
+        .filter-section { background: #eef2f5; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; border: 1px solid #dce4e8; }
+        .filter-input { padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; flex: 1; min-width: 200px; outline: none; transition: 0.3s; }
+        .filter-input:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(0,74,153,0.3); }
+        .filter-select { padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; min-width: 180px; background: white; cursor: pointer; outline: none; }
+        
+        .main-layout { display: flex; flex-wrap: wrap; gap: 30px; text-align: left; }
+        .products-section { flex: 3; min-width: 300px; }
+        .cart-section { flex: 1.2; min-width: 280px; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eee; height: fit-content; position: sticky; top: 20px; }
+        
+        /* Marka Başlıkları ve Grid */
+        .brand-title { background: var(--primary); color: white; padding: 10px 15px; border-radius: 5px; margin: 30px 0 15px 0; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+        
+        /* Şık Resimsiz Kart Tasarımı */
+        .product-card { border: 1px solid #e0e0e0; border-top: 4px solid var(--primary); padding: 20px 15px; border-radius: 8px; background: #fff; text-align: center; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card:hover { border-color: var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.08); transform: translateY(-3px); }
+        .product-icon { font-size: 36px; margin-bottom: 10px; }
+        .product-cat { font-size: 12px; color: #555; background: #eef2f5; padding: 5px 10px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
+        .product-card h3 { color: #222; margin: 0 0 15px; font-size: 16px; min-height: 45px; display: flex; align-items: center; justify-content: center; }
+        
+        .add-btn { background: var(--secondary); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.2s; }
+        .add-btn:hover { background: #b71c1c; }
+        
+        /* Sepet */
+        .cart-title { font-size: 18px; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-top: 0; }
+        #cart-items { list-style: none; padding: 0; margin: 15px 0; max-height: 400px; overflow-y: auto; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ccc; font-size: 14px; }
+        .remove-btn { background: #ff4444; color: white; border: none; border-radius: 3px; cursor: pointer; padding: 4px 8px; font-size: 12px; }
+        
+        .wa-btn { background: var(--whatsapp); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+        .wa-btn:hover { background: #20b858; }
+        .wa-btn:disabled { background: #ccc; cursor: not-allowed; }
+        
+        .no-result { text-align: center; padding: 30px; color: #888; font-style: italic; width: 100%; border: 1px dashed #ccc; border-radius: 8px; }
+        
+        @media (max-width: 768px) { .main-layout { flex-direction: column; } .cart-section { position: relative; top: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="logo.png" alt="Ankara Madeni Yağ Logosu" class="logo">
+    <h1>Ankara Madeni Yağ</h1>
+    <p style="color: #666; margin-bottom: 20px;">Ankara Ostim Toptan ve Perakende Sipariş Sistemi</p>
+
+    <div class="filter-section">
+        <input type="text" id="searchInput" class="filter-input" placeholder="🔍 Ürün adı veya marka ara (Örn: 5W30, Castrol)..." onkeyup="applyFilters()">
+        
+        <select id="categorySelect" class="filter-select" onchange="updateViscosities(); applyFilters();">
+            <option value="">-- Kategori Seçin --</option>
+            <option value="Motor Yağı">Motor Yağı</option>
+            <option value="Şanzıman Yağı">Şanzıman / Dişli Yağı</option>
+            <option value="Hidrolik Yağı">Hidrolik Yağı</option>
+            <option value="Antifriz">Antifriz & Katkılar</option>
+        </select>
+
+        <select id="viscositySelect" class="filter-select" onchange="applyFilters()">
+            <option value="">-- Önce Kategori Seçin --</option>
+        </select>
+    </div>
+
+    <div class="main-layout">
+        <div class="products-section" id="products-container">
+            </div>
+
+        <div class="cart-section">
+            <h2 class="cart-title">🛒 Teklif Sepetiniz</h2>
+            <ul id="cart-items">
+                <li style="color: #888; text-align: center; padding: 20px 0;">Sepetiniz henüz boş.</li>
+            </ul>
+            <button id="wa-button" class="wa-btn" disabled onclick="sendToWhatsApp()">
+                📲 WhatsApp'tan Sipariş Fişini Gönder
+            </button>
+            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 10px;">* Fiyatlar için tarafınıza anında dönüş yapılacaktır.</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; font-size: 14px; color: #444; border-top: 1px solid #eee; padding-top: 20px; text-align: center; line-height: 1.8;">
+        <strong>📍 Adres:</strong> 1229 SOKAK NO:7 OSTİM YENİMAHALLE ANKARA<br>
+        <strong>📞 İletişim:</strong> 0501 542 14 22<br>
+    </div>
+</div>
+
+<script>
+    // Veritabanınızdan Çekilen Gerçek Ürünler (Resimsiz Format)
+    const productsDB = [
+        // CASTROL
+        { name: "Magnatec 10W40", brand: "Castrol", cat: "Motor Yağı", visc: "10W40" },
+        { name: "Magnatec 5W20 Stop Start", brand: "Castrol", cat: "Motor Yağı", visc: "5W20" },
+        { name: "Edge 5W40", brand: "Castrol", cat: "Motor Yağı", visc: "5W40" },
+        { name: "Transmax ATF Z", brand: "Castrol", cat: "Şanzıman Yağı", visc: "ATF" },
+        { name: "Transmax Axle 80W90", brand: "Castrol", cat: "Şanzıman Yağı", visc: "80W90" },
+        { name: "Hypsin HVI 46", brand: "Castrol", cat: "Hidrolik Yağı", visc: "46" },
+        
+        // SHELL
+        { name: "Helix HX8 5W40", brand: "Shell", cat: "Motor Yağı", visc: "5W40" },
+        { name: "Rimula R5 LE 10W40", brand: "Shell", cat: "Motor Yağı", visc: "10W40" },
+        { name: "Tellus S2M 68", brand: "Shell", cat: "Hidrolik Yağı", visc: "68" },
+        { name: "Spirax S2 ATF AX", brand: "Shell", cat: "Şanzıman Yağı", visc: "ATF" },
+
+        // PETROL OFİSİ
+        { name: "Maximus LA 10W40", brand: "Petrol Ofisi", cat: "Motor Yağı", visc: "10W40" },
+        { name: "Extended Life Coolant", brand: "Petrol Ofisi", cat: "Antifriz", visc: "Kırmızı" },
+
+        // LIQUI MOLY
+        { name: "5W30 Molygen", brand: "Liqui Moly", cat: "Motor Yağı", visc: "5W30" },
+        { name: "Engine Flush", brand: "Liqui Moly", cat: "Antifriz", visc: "Katkı" },
+
+        // DİĞER MARKALAR (LUKOIL, BORAX, ARTOIL)
+        { name: "ATF IID", brand: "Lukoil", cat: "Şanzıman Yağı", visc: "ATF" },
+        { name: "Transmission GL1 140", brand: "Lukoil", cat: "Şanzıman Yağı", visc: "140" },
+        { name: "EP 80W90", brand: "Borax", cat: "Şanzıman Yağı", visc: "80W90" },
+        { name: "Kırmızı Antifriz", brand: "Borax", cat: "Antifriz", visc: "Kırmızı" },
+        { name: "5W30 Yeşil", brand: "Artoil", cat: "Motor Yağı", visc: "5W30" }
+    ];
+
+    const viscosityData = {
+        "Motor Yağı": ["5W20", "5W30", "5W40", "10W40", "15W40", "20W50"],
+        "Şanzıman Yağı": ["ATF", "75W90", "80W90", "90", "140"],
+        "Hidrolik Yağı": ["32", "46", "68"],
+        "Antifriz": ["Kırmızı", "Mavi", "Katkı"]
+    };
+
+    let cart = {};
+
+    function getIcon(category) {
+        switch(category) {
+            case "Motor Yağı": return "🛢️";
+            case "Şanzıman Yağı": return "⚙️";
+            case "Hidrolik Yağı": return "💧";
+            case "Antifriz": return "❄️";
+            default: return "📦";
+        }
+    }
+
+    function updateViscosities() {
+        const catSelect = document.getElementById("categorySelect").value;
+        const viscSelect = document.getElementById("viscositySelect");
+        
+        viscSelect.innerHTML = '<option value="">-- Yağ Numarası Seçin --</option>';
+        
+        if (catSelect && viscosityData[catSelect]) {
+            viscosityData[catSelect].forEach(v => {
+                viscSelect.innerHTML += `<option value="${v}">${v}</option>`;
+            });
+        } else {
+            viscSelect.innerHTML = '<option value="">-- Önce Kategori Seçin --</option>';
+        }
+    }
+
+    function applyFilters() {
+        const searchText = document.getElementById("searchInput").value.toLowerCase();
+        const catFilter = document.getElementById("categorySelect").value;
+        const viscFilter = document.getElementById("viscositySelect").value;
+        const container = document.getElementById("products-container");
+        
+        container.innerHTML = "";
+
+        const filtered = productsDB.filter(p => {
+            const matchesSearch = p.name.toLowerCase().includes(searchText) || p.brand.toLowerCase().includes(searchText) || p.visc.toLowerCase().includes(searchText);
+            const matchesCat = catFilter === "" || p.cat === catFilter;
+            const matchesVisc = viscFilter === "" || p.visc === viscFilter;
+            return matchesSearch && matchesCat && matchesVisc;
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = "<div class='no-result'>Arama kriterlerinize uygun ürün bulunamadı. Lütfen filtreleri veya aramayı değiştirin.</div>";
+            return;
+        }
+
+        const brands = [...new Set(filtered.map(p => p.brand))];
+
+        brands.forEach(brand => {
+            const brandTitle = document.createElement("div");
+            brandTitle.className = "brand-title";
+            brandTitle.innerHTML = `🏢 ${brand}`;
+            container.appendChild(brandTitle);
+
+            const grid = document.createElement("div");
+            grid.className = "product-grid";
+
+            const brandProducts = filtered.filter(p => p.brand === brand);
+            brandProducts.forEach(product => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <div class="product-icon">${getIcon(product.cat)}</div>
+                    <div>
+                        <span class="product-cat">${product.cat} | ${product.visc}</span>
+                        <h3>${product.name}</h3>
+                    </div>
+                    <button class="add-btn" onclick="addToCart('${product.name} - ${product.brand}')">+ Sepete Ekle</button>
+                `;
+                grid.appendChild(card);
+            });
+            container.appendChild(grid);
+        });
+    }
+
+    function addToCart(product) {
+        if (cart[product]) cart[product]++;
+        else cart[product] = 1;
+        updateCartUI();
+    }
+
+    function removeFromCart(product) {
+        delete cart[product];
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const cartList = document.getElementById('cart-items');
+        const waButton = document.getElementById('wa-button');
+        cartList.innerHTML = '';
+        
+        const items = Object.keys(cart);
+        if (items.length === 0) {
+            cartList.innerHTML = '<li style="color: #888; text-align: center; padding: 20px 0;">Sepetiniz henüz boş.</li>';
+            waButton.disabled = true;
+            return;
+        }
+
+        waButton.disabled = false;
+        items.forEach(product => {
+            const li = document.createElement('li');
+            li.className = 'cart-item';
+            li.innerHTML = `
+                <span><strong>${cart[product]} Adet</strong> - ${product}</span>
+                <button class="remove-btn" onclick="removeFromCart('${product}')">Sil</button>
+            `;
+            cartList.appendChild(li);
+        });
+    }
+
+    function sendToWhatsApp() {
+        const phoneNumber = "905015421422";
+        let message = "Merhaba Ankara Madeni Yağ. Web sitenizden aşağıdaki ürünler için toptan sipariş/fiyat talebi oluşturmak istiyorum:%0A%0A";
+        
+        Object.keys(cart).forEach(product => {
+            message += `👉 ${cart[product]} Adet : ${product}%0A`;
+        });
+        message += "%0ALütfen stok ve fiyat bilgisi için tarafıma dönüş sağlar mısınız?";
+        
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+
+    window.onload = applyFilters;
+</script>
+</body>
+</html>
