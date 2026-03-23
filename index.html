@@ -86,8 +86,15 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .top-bar { flex-direction: column; gap: 10px; } .nav-menu { display: none; } .product-row { flex-direction: column; align-items: flex-start; gap: 15px; } .product-action { width: 100%; } }
-    </style>
+@media (max-width: 768px) { 
+            .top-bar { flex-direction: column; gap: 10px; text-align: center; } 
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-menu { display: flex; width: 100%; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 5px; }
+            .nav-menu a { font-size: 15px; padding: 5px; }
+            .product-row { flex-direction: column; align-items: flex-start; gap: 15px; } 
+            .product-action { width: 100%; } 
+            .contact-container { flex-direction: column; }
+        }    </style>
 </head>
 <body>
 
