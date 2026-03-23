@@ -3,264 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankara Madeni Yağ | Toptan Sipariş ve Fiyat Teklifi</title>
-    <meta name="description" content="Ankara Madeni Yağ Ostim. Akıllı yağ seçici ile aracınıza uygun motor, şanzıman ve hidrolik yağını bulun, WhatsApp'tan anında sipariş verin.">
+    <title>Ankara Madeni Yağ | Toptan ve Perakende</title>
+    <meta name="description" content="Ankara Ostim madeni yağ toptancısı. Motor, şanzıman ve hidrolik yağlarında en geniş çeşit ve uygun fiyatlar.">
     
     <style>
-        :root { --primary: #004a99; --secondary: #d32f2f; --whatsapp: #25D366; --bg: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: var(--bg); text-align: center; }
-        .container { max-width: 1100px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        img.logo { max-width: 250px; height: auto; margin-bottom: 10px; }
-        h1 { color: var(--primary); margin-bottom: 5px; font-size: 26px; }
+        :root { --primary: #004a99; --primary-dark: #003366; --secondary: #d32f2f; --light: #f4f7f6; --text: #333; --border: #e0e0e0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        .top-bar { background-color: var(--secondary); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 8px 20px; font-size: 13px; font-weight: bold; }
+        .top-bar-left { display: flex; align-items: center; gap: 10px; }
+        .top-bar-right { display: flex; gap: 15px; }
+        .top-bar-btn { background: rgba(255,255,255,0.2); color: #fff; padding: 5px 15px; border-radius: 20px; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
+        .top-bar-btn:hover { background: #fff; color: var(--secondary); }
+        .top-bar-whatsapp { background: #25D366; color: #fff; }
+        .top-bar-whatsapp:hover { background: #20b858; color: #fff; }
+
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .nav-logo { font-size: 24px; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 40px; }
+        .nav-menu { list-style: none; display: flex; gap: 20px; }
+        .nav-menu li { position: relative; padding: 10px 0; }
+        .nav-menu a { font-weight: 600; color: #555; transition: 0.3s; padding: 5px 10px; }
+        .nav-menu a:hover { color: var(--primary); }
         
-        /* Akıllı Filtre ve Arama Alanı */
-        .filter-section { background: #eef2f5; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; border: 1px solid #dce4e8; }
-        .filter-input { padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; flex: 1; min-width: 200px; outline: none; transition: 0.3s; }
-        .filter-input:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(0,74,153,0.3); }
-        .filter-select { padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; min-width: 180px; background: white; cursor: pointer; outline: none; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); list-style: none; min-width: 220px; border-top: 3px solid var(--primary); border-radius: 0 0 5px 5px; }
+        .nav-menu li:hover .dropdown-menu { display: block; animation: fadeIn 0.3s ease; }
+        .dropdown-menu li { padding: 0; border-bottom: 1px solid #eee; }
+        .dropdown-menu a { display: block; padding: 12px 15px; font-weight: normal; font-size: 14px; }
+        .dropdown-menu a:hover { background: #f9f9f9; padding-left: 20px; color: var(--primary); }
+
+        .hero { background: linear-gradient(rgba(0, 74, 153, 0.8), rgba(0, 74, 153, 0.9)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); color: #fff; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px auto; opacity: 0.9; }
+
+        .about-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        .about-section h2 { color: var(--primary); font-size: 32px; margin-bottom: 20px; position: relative; display: inline-block; }
+        .about-section h2::after { content: ''; width: 50%; height: 3px; background: var(--secondary); position: absolute; bottom: -10px; left: 25%; }
+        .about-section p { font-size: 16px; color: #666; max-width: 800px; margin: 20px auto; line-height: 1.8; }
+
+        .main-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
         
-        .main-layout { display: flex; flex-wrap: wrap; gap: 30px; text-align: left; }
-        .products-section { flex: 3; min-width: 300px; }
-        .cart-section { flex: 1.2; min-width: 280px; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eee; height: fit-content; position: sticky; top: 20px; }
+        .selector-box { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); width: 100%; transition: 0.3s; }
+        .selector-box:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .selector-title { font-size: 22px; color: var(--primary); margin-bottom: 20px; font-weight: bold; }
+        .filter-group { display: flex; flex-wrap: wrap; gap: 20px; }
+        .filter-item { flex: 1; min-width: 250px; }
+        .filter-item label { display: block; font-size: 14px; font-weight: bold; color: #555; margin-bottom: 8px; }
+        .filter-select { width: 100%; padding: 15px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; outline: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); background: #fdfdfd; cursor: pointer; }
+        .filter-select:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-color: var(--primary); }
+        .filter-select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,74,153,0.2); }
+        .filter-select:disabled { background: #eee; cursor: not-allowed; opacity: 0.7; }
+
+        .products-area { flex: 2.5; min-width: 300px; }
+        .product-list { display: flex; flex-direction: column; gap: 20px; }
         
-        /* Marka Başlıkları ve Grid */
-        .brand-title { background: var(--primary); color: white; padding: 10px 15px; border-radius: 5px; margin: 30px 0 15px 0; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+        .product-row { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 25px; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; transform: translateY(20px); animation: slideUp 0.5s forwards; }
+        .product-row:hover { box-shadow: 0 15px 35px rgba(0, 74, 153, 0.15); transform: translateY(-5px); border-color: var(--primary); }
         
-        /* Şık Resimsiz Kart Tasarımı */
-        .product-card { border: 1px solid #e0e0e0; border-top: 4px solid var(--primary); padding: 20px 15px; border-radius: 8px; background: #fff; text-align: center; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card:hover { border-color: var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.08); transform: translateY(-3px); }
-        .product-icon { font-size: 36px; margin-bottom: 10px; }
-        .product-cat { font-size: 12px; color: #555; background: #eef2f5; padding: 5px 10px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
-        .product-card h3 { color: #222; margin: 0 0 15px; font-size: 16px; min-height: 45px; display: flex; align-items: center; justify-content: center; }
+        .product-info { flex: 1; padding-right: 20px; }
+        .product-brand { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; font-weight: bold; }
+        .product-title { font-size: 20px; color: var(--primary-dark); margin-bottom: 10px; }
+        .product-desc { font-size: 14px; color: #666; line-height: 1.6; }
         
-        .add-btn { background: var(--secondary); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.2s; }
-        .add-btn:hover { background: #b71c1c; }
-        
-        /* Sepet */
-        .cart-title { font-size: 18px; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-top: 0; }
-        #cart-items { list-style: none; padding: 0; margin: 15px 0; max-height: 400px; overflow-y: auto; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ccc; font-size: 14px; }
-        .remove-btn { background: #ff4444; color: white; border: none; border-radius: 3px; cursor: pointer; padding: 4px 8px; font-size: 12px; }
-        
-        .wa-btn { background: var(--whatsapp); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
-        .wa-btn:hover { background: #20b858; }
-        .wa-btn:disabled { background: #ccc; cursor: not-allowed; }
-        
-        .no-result { text-align: center; padding: 30px; color: #888; font-style: italic; width: 100%; border: 1px dashed #ccc; border-radius: 8px; }
-        
-        @media (max-width: 768px) { .main-layout { flex-direction: column; } .cart-section { position: relative; top: 0; } }
+        .product-action { min-width: 180px; display: flex; flex-direction: column; justify-content: center; }
+        .btn-add { background: #ffc107; color: #333; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-add:hover { background: #ffb300; transform: scale(1.05); box-shadow: 0 6px 12px rgba(255, 179, 0, 0.3); }
+
+        .cart-area { flex: 1; min-width: 300px; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; position: sticky; top: 90px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .cart-title { font-size: 18px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; font-weight: bold; }
+        #cart-items { list-style: none; max-height: 350px; overflow-y: auto; margin-bottom: 20px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed #eee; font-size: 14px; }
+        .cart-item-info { flex: 1; color: #444; }
+        .cart-item-qty { font-weight: bold; color: var(--secondary); margin-right: 5px; }
+        .btn-remove { background: #ff4444; color: #fff; border: none; padding: 4px 8px; border-radius: 5px; cursor: pointer; font-size: 12px; transition: 0.2s; }
+        .btn-remove:hover { background: #cc0000; }
+        .btn-submit { background: var(--whatsapp); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
+        .btn-submit:hover { background: #20b858; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
+        .btn-submit:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .top-bar { flex-direction: column; gap: 10px; } .nav-menu { display: none; } .product-row { flex-direction: column; align-items: flex-start; gap: 15px; } .product-action { width: 100%; } }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="logo.png" alt="Ankara Madeni Yağ Logosu" class="logo">
-    <h1>Ankara Madeni Yağ</h1>
-    <p style="color: #666; margin-bottom: 20px;">Ankara Ostim Toptan ve Perakende Sipariş Sistemi</p>
-
-    <div class="filter-section">
-        <input type="text" id="searchInput" class="filter-input" placeholder="🔍 Ürün adı veya marka ara (Örn: 5W30, Castrol)..." onkeyup="applyFilters()">
-        
-        <select id="categorySelect" class="filter-select" onchange="updateViscosities(); applyFilters();">
-            <option value="">-- Kategori Seçin --</option>
-            <option value="Motor Yağı">Motor Yağı</option>
-            <option value="Şanzıman Yağı">Şanzıman / Dişli Yağı</option>
-            <option value="Hidrolik Yağı">Hidrolik Yağı</option>
-            <option value="Antifriz">Antifriz & Katkılar</option>
-        </select>
-
-        <select id="viscositySelect" class="filter-select" onchange="applyFilters()">
-            <option value="">-- Önce Kategori Seçin --</option>
-        </select>
-    </div>
-
-    <div class="main-layout">
-        <div class="products-section" id="products-container">
-            </div>
-
-        <div class="cart-section">
-            <h2 class="cart-title">🛒 Teklif Sepetiniz</h2>
-            <ul id="cart-items">
-                <li style="color: #888; text-align: center; padding: 20px 0;">Sepetiniz henüz boş.</li>
-            </ul>
-            <button id="wa-button" class="wa-btn" disabled onclick="sendToWhatsApp()">
-                📲 WhatsApp'tan Sipariş Fişini Gönder
-            </button>
-            <p style="font-size: 11px; color: #777; text-align: center; margin-top: 10px;">* Fiyatlar için tarafınıza anında dönüş yapılacaktır.</p>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            📍 1229 Sokak No:7 Ostim Yenimahalle / ANKARA
+        </div>
+        <div class="top-bar-right">
+            <a href="tel:+905015421422" class="top-bar-btn">📞 Bizi Arayın: 0501 542 14 22</a>
+            <a href="https://wa.me/905015421422" target="_blank" class="top-bar-btn top-bar-whatsapp">💬 WhatsApp'tan Mesaj At</a>
         </div>
     </div>
-    
-    <div style="margin-top: 40px; font-size: 14px; color: #444; border-top: 1px solid #eee; padding-top: 20px; text-align: center; line-height: 1.8;">
-        <strong>📍 Adres:</strong> 1229 SOKAK NO:7 OSTİM YENİMAHALLE ANKARA<br>
-        <strong>📞 İletişim:</strong> 0501 542 14 22<br>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+                Ankara Madeni Yağ
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li>
+                    <a href="#selector">Ürünlerimiz ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#selector">Motor Yağları</a></li>
+                        <li><a href="#selector">Şanzıman ve Dişli Yağları</a></li>
+                        <li><a href="#selector">Hidrolik Sistem Yağları</a></li>
+                        <li><a href="#selector">Gresler ve Antifrizler</a></li>
+                    </ul>
+                </li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Endüstriyel ve Otomotiv Yağ Çözümleri</h1>
+        <p>Ankara Ostim'de yılların tecrübesiyle, en iyi markaların motor, şanzıman ve hidrolik yağlarını toptan fiyat avantajlarıyla sunuyoruz.</p>
+    </section>
+
+    <div class="main-container" id="selector">
+        
+        <div class="selector-box">
+            <div class="selector-title">🔍 Yağ Seçici</div>
+            <div class="filter-group">
+                <div class="filter-item">
+                    <label>1. Ürün Grubunu Seçin</label>
+                    <select id="mainCategory" class="filter-select" onchange="loadSubCategories()">
+                        <option value="">-- Seçiniz --</option>
+                        <option value="Madeni Yağlar">Motor Yağları</option>
+                        <option value="Şanzıman Yağları">Şanzıman ve Dişli Yağları</option>
+                        <option value="Hidrolik Yağlar">Hidrolik Yağlar</option>
+                        <option value="Gresler">Gresler</option>
+                        <option value="Antifriz">Antifriz ve Bakım</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>2. Numara / Viskozite Seçin</label>
+                    <select id="subCategory" class="filter-select" disabled onchange="displayProducts()">
+                        <option value="">-- Tüm Çeşitleri Gör --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-area">
+            <div id="product-list" class="product-list">
+                <div style="text-align:center; padding: 40px; color:#aaa; border:1px dashed #ddd; border-radius:10px;">
+                    Sıralanan ürünleri görmek için lütfen yukarıdan seçim yapınız.
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-area">
+            <div class="cart-title">
+                <span>🛒 Teklif Sepeti</span>
+            </div>
+            <ul id="cart-items">
+                <li style="text-align:center; color:#aaa; padding: 20px 0;">Sepetiniz boş.</li>
+            </ul>
+            <button id="btn-whatsapp" class="btn-submit" disabled onclick="sendOrder()">
+                WhatsApp'tan Teklif İste
+            </button>
+        </div>
+
     </div>
-</div>
+
+    <footer style="background: #222; color: #ccc; text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <h3 style="color:#fff; margin-bottom:15px;">Ankara Madeni Yağ</h3>
+        <p>📍 1229 Sokak No:7 Ostim Yenimahalle / ANKARA</p>
+        <p style="margin-top:20px; font-size:12px; border-top:1px solid #444; padding-top:15px;">© 2026 Tüm Hakları Saklıdır.</p>
+    </footer>
 
 <script>
-    // Veritabanınızdan Çekilen Gerçek Ürünler (Resimsiz Format)
-    const productsDB = [
-        // CASTROL
-        { name: "Magnatec 10W40", brand: "Castrol", cat: "Motor Yağı", visc: "10W40" },
-        { name: "Magnatec 5W20 Stop Start", brand: "Castrol", cat: "Motor Yağı", visc: "5W20" },
-        { name: "Edge 5W40", brand: "Castrol", cat: "Motor Yağı", visc: "5W40" },
-        { name: "Transmax ATF Z", brand: "Castrol", cat: "Şanzıman Yağı", visc: "ATF" },
-        { name: "Transmax Axle 80W90", brand: "Castrol", cat: "Şanzıman Yağı", visc: "80W90" },
-        { name: "Hypsin HVI 46", brand: "Castrol", cat: "Hidrolik Yağı", visc: "46" },
-        
-        // SHELL
-        { name: "Helix HX8 5W40", brand: "Shell", cat: "Motor Yağı", visc: "5W40" },
-        { name: "Rimula R5 LE 10W40", brand: "Shell", cat: "Motor Yağı", visc: "10W40" },
-        { name: "Tellus S2M 68", brand: "Shell", cat: "Hidrolik Yağı", visc: "68" },
-        { name: "Spirax S2 ATF AX", brand: "Shell", cat: "Şanzıman Yağı", visc: "ATF" },
-
-        // PETROL OFİSİ
-        { name: "Maximus LA 10W40", brand: "Petrol Ofisi", cat: "Motor Yağı", visc: "10W40" },
-        { name: "Extended Life Coolant", brand: "Petrol Ofisi", cat: "Antifriz", visc: "Kırmızı" },
-
-        // LIQUI MOLY
-        { name: "5W30 Molygen", brand: "Liqui Moly", cat: "Motor Yağı", visc: "5W30" },
-        { name: "Engine Flush", brand: "Liqui Moly", cat: "Antifriz", visc: "Katkı" },
-
-        // DİĞER MARKALAR (LUKOIL, BORAX, ARTOIL)
-        { name: "ATF IID", brand: "Lukoil", cat: "Şanzıman Yağı", visc: "ATF" },
-        { name: "Transmission GL1 140", brand: "Lukoil", cat: "Şanzıman Yağı", visc: "140" },
-        { name: "EP 80W90", brand: "Borax", cat: "Şanzıman Yağı", visc: "80W90" },
-        { name: "Kırmızı Antifriz", brand: "Borax", cat: "Antifriz", visc: "Kırmızı" },
-        { name: "5W30 Yeşil", brand: "Artoil", cat: "Motor Yağı", visc: "5W30" }
-    ];
-
-    const viscosityData = {
-        "Motor Yağı": ["5W20", "5W30", "5W40", "10W40", "15W40", "20W50"],
-        "Şanzıman Yağı": ["ATF", "75W90", "80W90", "90", "140"],
-        "Hidrolik Yağı": ["32", "46", "68"],
-        "Antifriz": ["Kırmızı", "Mavi", "Katkı"]
+    // DEVASA GENİŞLETİLMİŞ GERÇEK PİYASA VERİTABANI
+    const db = {
+        "Madeni Yağlar": {
+            "0W20": [
+                { brand: "Castrol", name: "Edge 0W-20", desc: "Yeni nesil hibrit ve modern motorlar için geliştirilmiş, maksimum performans sağlayan tam sentetik motor yağı." },
+                { brand: "Motul", name: "8100 Eco-lite 0W-20", desc: "Benzinli motorlar için yakıt ekonomisi sağlayan %100 sentetik yağ." },
+                { brand: "Mobil 1", name: "ESP X2 0W-20", desc: "Emisyon sistemlerinin verimliliğini koruyan, yakıt ekonomisini artıran yeşil formül." },
+                { brand: "Shell", name: "Helix Ultra Professional AS-L 0W-20", desc: "Volvo gibi üreticilerin spesifikasyonlarını karşılayan özel sentetik yağ." },
+                { brand: "Liqui Moly", name: "Special Tec V 0W-20", desc: "Yeni nesil Volvo motorları için optimum aşınma koruması sunan alman teknolojisi." },
+                { brand: "Total", name: "Quartz Ineo Xtra Dynamics 0W-20", desc: "Aşırı sıcaklık değişimlerine dayanıklı, yeni nesil hibrit uyumlu yağ." },
+                { brand: "Petrol Ofisi", name: "Maxima CX 0W-20", desc: "Düşük emisyonlu motorlar için üstün koruma sağlayan yakıt cimrisi motor yağı." }
+            ],
+            "5W30": [
+                { brand: "Castrol", name: "Edge 5W-30 LL", desc: "Fluid TITANIUM teknolojisi ile basınç altında güçlenerek motoru en üst düzeyde korur." },
+                { brand: "Castrol", name: "Magnatec 5W-30 Stop-Start", desc: "Dur-kalk trafiğinde meydana gelen aşınmalara karşı %50 daha fazla koruma sağlayan akıllı moleküller." },
+                { brand: "Castrol", name: "GTX 5W-30", desc: "Zorlu koşullarda motor çamurlaşmasına karşı üstün koruma sağlayan güvenilir motor yağı." },
+                { brand: "Shell", name: "Helix Ultra 5W-30", desc: "Doğalgazdan üretilmiş patentli formülüyle yüksek performanslı motorlarda maksimum verim." },
+                { brand: "Shell", name: "Helix HX8 5W-30", desc: "Sürtünmeyi azaltarak yakıt tasarrufu sağlayan sentetik teknolojili motor yağı." },
+                { brand: "Mobil 1", name: "ESP 5W-30", desc: "Dizel partikül filtreleri ve benzin katalitik konvertörleri ile tam uyumlu efsanevi formül." },
+                { brand: "Mobil", name: "Super 3000 XE 5W-30", desc: "Binek ve hafif ticari araçlar için düşük küllü, yüksek performanslı tam sentetik yağ." },
+                { brand: "Motul", name: "8100 X-clean EFE 5W-30", desc: "Düşük emisyonlu Euro 4, 5 ve 6 motorlar için ekstra yakıt ekonomisi sağlayan %100 sentetik yağ." },
+                { brand: "Liqui Moly", name: "Top Tec 4200 5W-30", desc: "Özellikle Alman grubu (VW, Audi, BMW, Mercedes) araçlar için onaylı yüksek teknoloji ürünü." },
+                { brand: "Total", name: "Quartz INEO ECS 5W-30", desc: "Peugeot ve Citroen (PSA) onaylı, DPF ömrünü uzatan özel sentetik yağ." },
+                { brand: "Elf", name: "Evolution Full-Tech FE 5W-30", desc: "Renault araçları için özel olarak geliştirilmiş, DPF uyumlu ileri teknoloji motor yağı." },
+                { brand: "Opet", name: "Fullmax LE 5W-30", desc: "Egzoz emisyon sistemlerini koruyan, uzun ömürlü, yerli üretim sentetik motor yağı." },
+                { brand: "Petrol Ofisi", name: "Maxima CX 5W-30", desc: "DPF ve TWC sistemlerine sahip modern araçlar için üretilmiş üstün performans yağı." },
+                { brand: "Lukoil", name: "Genesis Armortech 5W-30", desc: "Avrupa araçları için özel katık paketiyle güçlendirilmiş sentetik motor yağı." }
+            ],
+            "5W40": [
+                { brand: "Motul", name: "8100 X-cess 5W-40", desc: "Yüksek hacimli ve güçlü motorlar için özel olarak tasarlanmış, çok amaçlı %100 sentetik yağ." },
+                { brand: "Castrol", name: "Edge 5W-40", desc: "Yüksek devir ve sıcaklıklarda dahi yağ filminin kopmasını engelleyen üstün formülasyon." },
+                { brand: "Shell", name: "Helix Ultra 5W-40", desc: "Ferrari ve diğer performans araçları tarafından tercih edilen, temizleyici özellikli motor yağı." },
+                { brand: "Mobil", name: "Super 3000 X1 5W-40", desc: "Geniş sıcaklık aralıklarında mükemmel aşınma koruması sağlayan tam sentetik yağ." },
+                { brand: "Total", name: "Quartz 9000 5W-40", desc: "Zorlu sürüş koşullarında benzersiz motor koruması sunan tam sentetik yağ." },
+                { brand: "Liqui Moly", name: "Molygen New Generation 5W-40", desc: "Özel florasan yeşili rengi ve Molecular Friction Control teknolojisi ile sürtünmeyi inanılmaz derecede azaltır." },
+                { brand: "Petrol Ofisi", name: "Maxima 5W-40", desc: "Turbo ve çok valfli modern motorlar için dört mevsim tam koruma sağlayan sentetik yağ." },
+                { brand: "Elf", name: "Evolution 900 SXR 5W-40", desc: "Özellikle Renault motorlarında maksimum performans ve temizlik sağlayan formül." }
+            ],
+            "10W40": [
+                { brand: "Castrol", name: "Magnatec 10W-40 A3/B4", desc: "Motor ısınırken parçalara tutunarak ilk çalıştırma aşınmalarını önleyen yarı sentetik yağ." },
+                { brand: "Shell", name: "Helix HX7 10W-40", desc: "Çamur oluşumunu önleyerek motorun temiz kalmasına ve verimli çalışmasına yardımcı olur." },
+                { brand: "Mobil", name: "Super 2000 X1 10W-40", desc: "Günlük sürüş koşullarında motoru temiz tutan ve koruyan yarı sentetik motor yağı." },
+                { brand: "Total", name: "Quartz 7000 10W-40", desc: "Çok valfli ve turbolu motorlar için oksidasyona karşı yüksek dirençli yağ." },
+                { brand: "Elf", name: "Evolution 700 STI 10W-40", desc: "Yüksek performans beklentisi olan benzinli ve dizel motorlar için ideal koruma." },
+                { brand: "Motul", name: "Synergie+ 10W-40", desc: "Performans ve koruma arasında mükemmel denge kuran Technosynthese yağı." },
+                { brand: "Liqui Moly", name: "MoS2 Leichtlauf 10W-40", desc: "İçerdiği Molibden Disülfit (MoS2) katısı sayesinde motoru aşınmalara karşı ekstra korur." },
+                { brand: "Petrol Ofisi", name: "Maxima 10W-40", desc: "Geleneksel ve modern motorlarda tortu oluşumunu engelleyen yarı sentetik yağ." },
+                { brand: "Opet", name: "Fullmax 10W-40", desc: "Binek ve hafif ticari araçların ihtiyaçlarını karşılayan dayanıklı motor yağı." },
+                { brand: "Lubex", name: "Robus Pro 10W-40", desc: "Ağır vasıta ve binek araç filoları için fiyat/performans odaklı genel amaçlı yağ." }
+            ],
+            "15W40": [
+                { brand: "Shell", name: "Rimula R4 X 15W-40", desc: "Ağır hizmet tipi dizel motorlarda asit korozyonuna, tortuya ve aşınmaya karşı 3'lü koruma." },
+                { brand: "Mobil", name: "Delvac MX 15W-40", desc: "Geleneksel ağır hizmet kamyon ve iş makineleri için kanıtlanmış motor koruması." },
+                { brand: "Castrol", name: "Vecton 15W-40", desc: "System Pro Teknolojisi ile ağır vasıtalar için ekstra %45 performans rezervi sunar." },
+                { brand: "Total", name: "Rubia Tir 7400 15W-40", desc: "Euro 3 ve altı dizel motorlar için üstün temizleme ve aşınma koruması." },
+                { brand: "Petrol Ofisi", name: "Maximus HD 15W-40", desc: "Zorlu şartlarda çalışan kamyon, otobüs ve iş makineleri için kalın formüllü koruma." },
+                { brand: "Opet", name: "Fullpro HT 15W-40", desc: "Ağır yük altında çalışan filolar için uzun değişim aralığı sunan dayanıklı yağ." },
+                { brand: "Lukoil", name: "Vanguard 15W-40", desc: "Karma filolar için ekonomik ve standartları karşılayan ağır hizmet yağı." }
+            ]
+        },
+        "Şanzıman Yağları": {
+            "ATF": [
+                { brand: "Castrol", name: "Transmax ATF Z", desc: "Tam sentetik otomatik şanzıman yağı. Mükemmel vites geçişleri ve yüksek sıcaklıklarda üstün koruma sunar." },
+                { brand: "Motul", name: "ATF VI", desc: "Düşük viskoziteli, modern otomatik şanzımanlar (Dexron VI) için %100 sentetik yüksek performans yağı." },
+                { brand: "Mobil", name: "ATF 320", desc: "Dexron III spesifikasyonunu karşılayan, sorunsuz vites geçişi sağlayan direksiyon ve şanzıman yağı." },
+                { brand: "Shell", name: "Spirax S2 ATF AX", desc: "Ağır vasıta ve binek araçların hidrolik sistemleri için standart otomatik vites yağı." },
+                { brand: "Total", name: "Fluidmatic D3", desc: "Soğuk havada mükemmel akışkanlık sağlayan Dexron III seviyesinde yağ." },
+                { brand: "Petrol Ofisi", name: "ATF II", desc: "Otomatik şanzımanlar ve hidrolik direksiyonlar için yerli üretim genel amaçlı yağ." },
+                { brand: "Opet", name: "ATF Dexron II", desc: "Standart şanzıman ve direksiyon sistemleri için koruyucu hidrolik yağı." },
+                { brand: "Lukoil", name: "ATF IID", desc: "Geleneksel hidrolik direksiyon ve eski tip otomatik şanzımanlar için ekonomik çözüm." }
+            ],
+            "75W90": [
+                { brand: "Castrol", name: "Syntrax Universal Plus 75W-90", desc: "Senkromeçli manuel şanzımanlar ve diferansiyeller için tam sentetik çok amaçlı dişli yağı." },
+                { brand: "Mobil", name: "Mobilube 1 SHC 75W-90", desc: "Ağır yük altında çalışan ticari araç aktarma organları için mükemmel sentetik yağ." },
+                { brand: "Shell", name: "Spirax S6 AXME 75W-90", desc: "Uzun değişim aralıkları sunan, yakıt tasarrufu sağlayan diferansiyel yağı." },
+                { brand: "Motul", name: "Gear 300 75W-90", desc: "Yarış ve yüksek performanslı araç şanzımanları için %100 sentetik ester bazlı yağ." },
+                { brand: "Total", name: "Transmission Dual 9 FE 75W-90", desc: "Hem manuel şanzıman hem diferansiyel için uygun sentetik teknolojili dişli yağı." },
+                { brand: "Petrol Ofisi", name: "Maxigear Syncro 75W-90", desc: "Soğukta kolay vites geçişi, sıcakta tam koruma sağlayan yerli sentetik şanzıman yağı." },
+                { brand: "Liqui Moly", name: "Hochleistungs-Getriebeöl 75W-90", desc: "Aşırı basınç altında dişlileri koruyan Alman teknolojisi GL-4+ şanzıman yağı." }
+            ],
+            "80W90": [
+                { brand: "Castrol", name: "Transmax Axle 80W-90", desc: "Ağır yük altında çalışan diferansiyel ve akslar için geliştirilmiş aşırı basınç (EP) katkılı dişli yağı." },
+                { brand: "Mobil", name: "Mobilube HD 80W-90", desc: "Zorlu koşullarda çalışan ticari araçlar ve ağır iş makineleri için yüksek performanslı yağ." },
+                { brand: "Shell", name: "Spirax S2 A 80W-90", desc: "Geleneksel dişli kutuları ve diferansiyeller için aşınma önleyici GL-5 yağ." },
+                { brand: "Total", name: "Transmission Gear 8 80W-90", desc: "Darbe yüklü diferansiyellerde dişli sıyırmalarını engelleyen kalın yağ filmi." },
+                { brand: "Petrol Ofisi", name: "Maxigear EP 80W-90", desc: "Binek ve ağır vasıtalar için yerli üretim aşırı basınç özellikli genel amaçlı yağ." },
+                { brand: "Opet", name: "Fullgear EP 80W-90", desc: "Dişli yüzeylerinde pas ve korozyonu önleyen uzun ömürlü diferansiyel yağı." },
+                { brand: "Borax", name: "EP 80W-90", desc: "Standart diferansiyel sistemleri için fiyat/performans odaklı genel amaçlı dişli yağı." }
+            ],
+            "140": [
+                { brand: "Petrol Ofisi", name: "Gear EP 140", desc: "Yüksek sıcaklıklarda ve düşük devirlerde çalışan ağır hizmet diferansiyel yağı." },
+                { brand: "Shell", name: "Spirax S2 A 140", desc: "Aşırı yüklerin bindiği iş makineleri ve traktör aksları için ağır hizmet GL-5 yağı." },
+                { brand: "Mobil", name: "Mobilube HD 140", desc: "Yüksek viskoziteli, vuruntulu ve darbeyle çalışan diferansiyeller için kalın yağ." },
+                { brand: "Castrol", name: "Axle EPX 140", desc: "Düşük hız / yüksek tork koşullarında üstün dayanıklılık sağlayan dişli koruması." },
+                { brand: "Total", name: "Transmission TM 140", desc: "Endüstriyel şanzımanlar ve yavaş dönen dişliler için aşınma önleyici." },
+                { brand: "Opet", name: "Fullgear EP 140", desc: "Ağır iş ve tarım makineleri için geliştirilmiş pas önleyici özel formül." },
+                { brand: "Lukoil", name: "Transmission GL-5 140", desc: "Büyük filolar ve ağır hizmet koşulları için bütçe dostu koruyucu kalın dişli yağı." }
+            ]
+        },
+        "Hidrolik Yağlar": {
+            "32": [
+                { brand: "Shell", name: "Tellus S2M 32", desc: "Hassas endüstriyel hidrolik sistemler için formüle edilmiş ince yapıdaki aşınma önleyici yağ." },
+                { brand: "Mobil", name: "DTE 24 (ISO 32)", desc: "Yüksek basınçlı hidrolik sistemler, pompalar ve CNC tezgahları için endüstri standardı." },
+                { brand: "Castrol", name: "Hyspin AWS 32", desc: "Aşınma önleyici (AW) katıklarla güçlendirilmiş, oksidasyon direnci yüksek hidrolik yağı." },
+                { brand: "Total", name: "Azolla ZS 32", desc: "Uzun ekipman ömrü ve filtreleme kolaylığı sağlayan endüstriyel hidrolik sıvısı." },
+                { brand: "Petrol Ofisi", name: "Hydro Tech 32", desc: "Fabrika içi sistemlerde ve asansörlerde kullanılan yerli üretim aşınma önleyici hidrolik." },
+                { brand: "Opet", name: "Hydro AW 32", desc: "Köpürmeyi önleyen ve suyu hızla ayıran, sistemleri temiz tutan hidrolik yağı." },
+                { brand: "Lukoil", name: "Geyser ST 32", desc: "Genel amaçlı takım tezgahları ve endüstriyel uygulamalar için güvenilir çözüm." }
+            ],
+            "46": [
+                { brand: "Castrol", name: "Hyspin HVI 46", desc: "Yüksek viskozite indeksli, sıcaklık dalgalanmalarının yüksek olduğu ortamlarda (iş makineleri vb.) mükemmel çalışan hidrolik yağ." },
+                { brand: "Shell", name: "Tellus S2M 46", desc: "Ekskavatörler ve mobil iş makineleri için en çok tercih edilen dengeli aşınma önleyici yağ." },
+                { brand: "Mobil", name: "DTE 25 (ISO 46)", desc: "Ağır hizmet tipi pompalar ve valfler için uzun yağ ömrü ve koruma sunan üstün sıvı." },
+                { brand: "Total", name: "Azolla ZS 46", desc: "Zorlu hidrolik sistemler için termal stabilitesi yüksek aşınma önleyici yağ." },
+                { brand: "Petrol Ofisi", name: "Hydro Tech HVI 46", desc: "İş makineleri ve presler için basınca dayanıklı, sıcaklık değişimlerine dirençli hidrolik sistem yağı." },
+                { brand: "Opet", name: "Hydro HVI 46", desc: "Mobil hidrolik sistemlerde (vinç, kepçe) üstün performans sağlayan yerli üretim." },
+                { brand: "Lukoil", name: "Geyser ST 46", desc: "Yüksek basınç altında köpüklenmeyi kesen ve valfleri koruyan hidrolik yağı." }
+            ],
+            "68": [
+                { brand: "Shell", name: "Tellus S2M 68", desc: "Endüstriyel hidrolik sistemlerde, ekskavatörlerde ve preslerde güvenilir koruma sağlayan kalın sıvı gücü yağıdır." },
+                { brand: "Mobil", name: "DTE 26 (ISO 68)", desc: "Ağır yük altında çalışan plastik enjeksiyon makineleri ve presler için mükemmel seçim." },
+                { brand: "Castrol", name: "Hyspin AWS 68", desc: "Yüksek sıcaklıklarda yağ filminin incelmesini engelleyen, valf sıkışmalarını önleyen kalın formül." },
+                { brand: "Total", name: "Azolla ZS 68", desc: "Darbe yüklü sistemler için oksidasyon ve paslanmaya karşı yüksek dirençli hidrolik sıvı." },
+                { brand: "Petrol Ofisi", name: "Hydro Tech 68", desc: "Ağır sanayi presleri ve büyük iş makineleri için ekstra aşınma korumalı yağ." },
+                { brand: "Opet", name: "Hydro AW 68", desc: "Sızdırmazlık elemanları ile uyumlu çalışan, kalın formüllü genel amaçlı hidrolik yağ." },
+                { brand: "Lukoil", name: "Geyser ST 68", desc: "Endüstriyel kullanımlar için ekonomik ve uzun süreli parça koruması sağlayan kalın yağ." }
+            ]
+        },
+        "Gresler": {
+            "Kauçuklu": [
+                { brand: "Lubran", name: "Kauçuklu Gres", desc: "Otomotiv ve endüstriyel uygulamalarda suya dayanıklı, lifli (sünmeli) yapıya sahip genel amaçlı şasi gresi." },
+                { brand: "Petrol Ofisi", name: "Kauçuklu Gres", desc: "Kırmızı renkli, suyla yıkanmaya karşı dirençli, ağır yük altındaki kaymalı yataklar için şasi gresi." },
+                { brand: "Opet", name: "Super Kauçuklu Gres", desc: "Tozlu ve sulu ortamlarda şasi bağlantı noktalarını koruyan, yüksek lifli yerli gres." }
+            ],
+            "Lityumlu": [
+                { brand: "Shell", name: "Gadus S2 V220", desc: "Yüksek basınç (EP) katkılı, rulman ve kaymalı yataklar için çok amaçlı endüstriyel lityum gresi." },
+                { brand: "Mobil", name: "Mobilgrease XHP 222", desc: "Mavi renkli, aşırı basınca ve yüksek sıcaklıklara dayanıklı lityum kompleks rulman gresi." },
+                { brand: "Castrol", name: "Spheerol EPL 2", desc: "Otomotiv tekerlek rulmanları ve genel sanayi uygulamaları için aşınma önleyici lityum gres." },
+                { brand: "Total", name: "Multis EP 2", desc: "Darbeli yüklere ve titreşime maruz kalan yataklar için çok amaçlı lityum gresi." },
+                { brand: "Petrol Ofisi", name: "Super Lityum EP 2", desc: "Binek, ticari ve tarım araçları için suya ve pasa dayanıklı genel amaçlı lityum sabunlu gres." },
+                { brand: "Opet", name: "Lityum EP 2", desc: "Geniş sıcaklık aralıklarında formunu koruyan, merkezi yağlama sistemlerine uygun gres." },
+                { brand: "Lukoil", name: "Polyflex EP 2", desc: "Sürtünme yüzeylerinde kalıcı film tabakası oluşturan çok amaçlı endüstriyel gres." }
+            ]
+        },
+        "Antifriz": [
+            { brand: "Castrol", name: "Radicool SF", desc: "Silikat içermeyen, organik asit teknolojisi (OAT) ile üretilmiş uzun ömürlü kırmızı antifriz." },
+            { brand: "Mobil", name: "Antifreeze Advanced", desc: "Ağır kış şartlarında ve yüksek yaz sıcaklıklarında motoru koruyan organik yapılı soğutma sıvısı." },
+            { brand: "Shell", name: "Longlife Antifreeze", desc: "Alüminyum motor bloklarında korozyonu önleyen, 5 yıla kadar ömürlü OAT bazlı kırmızı antifriz." },
+            { brand: "Total", name: "Glacelf Auto Supra", desc: "Aşırı sıcaklık değişimlerine karşı motoru güvenceye alan, çok uzun ömürlü pembe/kırmızı antifriz." },
+            { brand: "Petrol Ofisi", name: "Extended Life Coolant", desc: "Modern motorların soğutma sistemlerini korozyona ve donmaya karşı koruyan antifriz." },
+            { brand: "Opet", name: "Super Antifriz", desc: "Tüm döküm ve alüminyum motorlar için dört mevsim koruma sağlayan yeşil/mavi inorganik antifriz." },
+            { brand: "Motul", name: "Inugel Optimal", desc: "Maksimum ısı transferi sağlayan, kaynama noktasını yükselten yarış teknolojisi antifriz." },
+            { brand: "Liqui Moly", name: "KFS 12+", desc: "Alman otomobillerinin orijinal dolum spesifikasyonlarını karşılayan kırmızı antifriz." },
+            { brand: "Borax", name: "Kırmızı Antifriz", desc: "Toptan alımlar için ekonomik ve standartlara uygun kırmızı motor soğutma sıvısı." },
+            { brand: "Wieweld", name: "Mavi Antifriz", desc: "Geleneksel soğutma sistemleri için inorganik mavi antifriz." }
+        ]
     };
 
     let cart = {};
 
-    function getIcon(category) {
-        switch(category) {
-            case "Motor Yağı": return "🛢️";
-            case "Şanzıman Yağı": return "⚙️";
-            case "Hidrolik Yağı": return "💧";
-            case "Antifriz": return "❄️";
-            default: return "📦";
+    function loadSubCategories() {
+        const mainCat = document.getElementById("mainCategory").value;
+        const subCatSelect = document.getElementById("subCategory");
+        
+        // Önce içeriği sıfırlayalım ve başlığı değiştirelim
+        subCatSelect.innerHTML = '<option value="">-- Tüm Çeşitleri Gör --</option>';
+        
+        if(mainCat === "Antifriz") {
+            subCatSelect.disabled = true;
+            displayAllInCategory(mainCat);
+        } 
+        else if(mainCat && db[mainCat]) {
+            subCatSelect.disabled = false;
+            Object.keys(db[mainCat]).forEach(subCat => {
+                subCatSelect.innerHTML += `<option value="${subCat}">${subCat}</option>`;
+            });
+            // Kategori seçildiği an tüm ürünleri ekrana dök
+            displayAllInCategory(mainCat);
+        } 
+        else {
+            subCatSelect.disabled = true;
+            document.getElementById("product-list").innerHTML = '<div style="text-align:center; padding: 40px; color:#aaa; border:1px dashed #ddd; border-radius:10px;">Sıralanan ürünleri görmek için lütfen yukarıdan seçim yapınız.</div>';
         }
     }
 
-    function updateViscosities() {
-        const catSelect = document.getElementById("categorySelect").value;
-        const viscSelect = document.getElementById("viscositySelect");
-        
-        viscSelect.innerHTML = '<option value="">-- Yağ Numarası Seçin --</option>';
-        
-        if (catSelect && viscosityData[catSelect]) {
-            viscosityData[catSelect].forEach(v => {
-                viscSelect.innerHTML += `<option value="${v}">${v}</option>`;
-            });
+    function displayAllInCategory(mainCat) {
+        let allProducts = [];
+        if (mainCat === "Antifriz") {
+            allProducts = db[mainCat];
         } else {
-            viscSelect.innerHTML = '<option value="">-- Önce Kategori Seçin --</option>';
-        }
-    }
-
-    function applyFilters() {
-        const searchText = document.getElementById("searchInput").value.toLowerCase();
-        const catFilter = document.getElementById("categorySelect").value;
-        const viscFilter = document.getElementById("viscositySelect").value;
-        const container = document.getElementById("products-container");
-        
-        container.innerHTML = "";
-
-        const filtered = productsDB.filter(p => {
-            const matchesSearch = p.name.toLowerCase().includes(searchText) || p.brand.toLowerCase().includes(searchText) || p.visc.toLowerCase().includes(searchText);
-            const matchesCat = catFilter === "" || p.cat === catFilter;
-            const matchesVisc = viscFilter === "" || p.visc === viscFilter;
-            return matchesSearch && matchesCat && matchesVisc;
-        });
-
-        if (filtered.length === 0) {
-            container.innerHTML = "<div class='no-result'>Arama kriterlerinize uygun ürün bulunamadı. Lütfen filtreleri veya aramayı değiştirin.</div>";
-            return;
-        }
-
-        const brands = [...new Set(filtered.map(p => p.brand))];
-
-        brands.forEach(brand => {
-            const brandTitle = document.createElement("div");
-            brandTitle.className = "brand-title";
-            brandTitle.innerHTML = `🏢 ${brand}`;
-            container.appendChild(brandTitle);
-
-            const grid = document.createElement("div");
-            grid.className = "product-grid";
-
-            const brandProducts = filtered.filter(p => p.brand === brand);
-            brandProducts.forEach(product => {
-                const card = document.createElement("div");
-                card.className = "product-card";
-                card.innerHTML = `
-                    <div class="product-icon">${getIcon(product.cat)}</div>
-                    <div>
-                        <span class="product-cat">${product.cat} | ${product.visc}</span>
-                        <h3>${product.name}</h3>
-                    </div>
-                    <button class="add-btn" onclick="addToCart('${product.name} - ${product.brand}')">+ Sepete Ekle</button>
-                `;
-                grid.appendChild(card);
+            Object.keys(db[mainCat]).forEach(subCat => {
+                allProducts = allProducts.concat(db[mainCat][subCat]);
             });
-            container.appendChild(grid);
+        }
+        renderProducts(allProducts);
+    }
+
+    function displayProducts() {
+        const mainCat = document.getElementById("mainCategory").value;
+        const subCat = document.getElementById("subCategory").value;
+        
+        if(mainCat) {
+            if (subCat && db[mainCat][subCat]) {
+                // Sadece seçilen viskoziteyi göster
+                renderProducts(db[mainCat][subCat]);
+            } else {
+                // Hiçbir şey seçilmediyse (veya 'Tüm Çeşitleri Gör' seçiliyse) hepsini göster
+                displayAllInCategory(mainCat);
+            }
+        }
+    }
+
+    function renderProducts(products) {
+        const listDiv = document.getElementById("product-list");
+        listDiv.innerHTML = "";
+        
+        let delay = 0; 
+        products.forEach(p => {
+            const uniqueId = `${p.brand} ${p.name}`;
+            listDiv.innerHTML += `
+                <div class="product-row" style="animation-delay: ${delay}s">
+                    <div class="product-info">
+                        <span class="product-brand">${p.brand}</span>
+                        <h3 class="product-title">${p.name}</h3>
+                        <p class="product-desc">${p.desc}</p>
+                    </div>
+                    <div class="product-action">
+                        <button class="btn-add" onclick="addToCart('${uniqueId}')">Teklif Sepetine Ekle</button>
+                    </div>
+                </div>
+            `;
+            delay += 0.05; // Hızlı liste yükleme animasyonu
         });
     }
 
-    function addToCart(product) {
-        if (cart[product]) cart[product]++;
-        else cart[product] = 1;
-        updateCartUI();
+    function addToCart(productName) {
+        if(cart[productName]) cart[productName]++;
+        else cart[productName] = 1;
+        updateCart();
     }
 
-    function removeFromCart(product) {
-        delete cart[product];
-        updateCartUI();
+    function removeCart(productName) {
+        delete cart[productName];
+        updateCart();
     }
 
-    function updateCartUI() {
-        const cartList = document.getElementById('cart-items');
-        const waButton = document.getElementById('wa-button');
-        cartList.innerHTML = '';
+    function updateCart() {
+        const cartUl = document.getElementById("cart-items");
+        const btnWa = document.getElementById("btn-whatsapp");
         
-        const items = Object.keys(cart);
-        if (items.length === 0) {
-            cartList.innerHTML = '<li style="color: #888; text-align: center; padding: 20px 0;">Sepetiniz henüz boş.</li>';
-            waButton.disabled = true;
+        cartUl.innerHTML = "";
+        const keys = Object.keys(cart);
+
+        if(keys.length === 0) {
+            cartUl.innerHTML = '<li style="text-align:center; color:#aaa; padding: 20px 0;">Sepetiniz boş.</li>';
+            btnWa.disabled = true;
             return;
         }
 
-        waButton.disabled = false;
-        items.forEach(product => {
-            const li = document.createElement('li');
-            li.className = 'cart-item';
-            li.innerHTML = `
-                <span><strong>${cart[product]} Adet</strong> - ${product}</span>
-                <button class="remove-btn" onclick="removeFromCart('${product}')">Sil</button>
+        btnWa.disabled = false;
+        keys.forEach(k => {
+            cartUl.innerHTML += `
+                <li class="cart-item">
+                    <div class="cart-item-info">
+                        <span class="cart-item-qty">${cart[k]}x</span> ${k}
+                    </div>
+                    <button class="btn-remove" onclick="removeCart('${k}')">Sil</button>
+                </li>
             `;
-            cartList.appendChild(li);
         });
     }
 
-    function sendToWhatsApp() {
-        const phoneNumber = "905015421422";
-        let message = "Merhaba Ankara Madeni Yağ. Web sitenizden aşağıdaki ürünler için toptan sipariş/fiyat talebi oluşturmak istiyorum:%0A%0A";
+    function sendOrder() {
+        const phone = "905015421422";
+        let msg = "Merhaba Ankara Madeni Yağ. Sitenizden aşağıdaki ürünler için toptan fiyat teklifi istiyorum:%0A%0A";
         
-        Object.keys(cart).forEach(product => {
-            message += `👉 ${cart[product]} Adet : ${product}%0A`;
+        Object.keys(cart).forEach(k => {
+            msg += `▪️ ${cart[k]} Adet : ${k}%0A`;
         });
-        message += "%0ALütfen stok ve fiyat bilgisi için tarafıma dönüş sağlar mısınız?";
         
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        msg += "%0ALütfen tarafıma dönüş sağlar mısınız?";
+        window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
     }
-
-    window.onload = applyFilters;
 </script>
+
 </body>
 </html>
