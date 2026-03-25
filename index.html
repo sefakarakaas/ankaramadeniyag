@@ -88,15 +88,15 @@
         .toptan-link { background: var(--primary-light); color: white !important; padding: 8px 16px !important; border-radius: 6px; }
         .toptan-link:hover { background: var(--primary) !important; color: white !important; }
 
-        /* GÜNCELLENEN HERO (GİRİŞ) ALANI - WEBP UZANTILI */
+        /* GERÇEK GÖRSEL - DARALMAYI ÖNLEYEN YÜKSEKLİK VE ODAK AYARI */
         .hero { 
-            /* Arka plana fotoğraf eklendi, üstüne koyu film tabakası atıldı */
+            /* Orijinal, gerçek fotoğrafınız arka planda */
             background: linear-gradient(rgba(15, 32, 39, 0.75), rgba(32, 58, 67, 0.85)), url('ankara-madeni-yag-ostim-magaza.webp');
             background-size: cover;
-            background-position: center;
+            background-position: center 65%; /* Fotoğrafın tam merkezini ve dükkanın o güzel kısmını odaklar */
             background-repeat: no-repeat;
             color: #fff; 
-            padding: 120px 20px 140px 20px; 
+            padding: 150px 20px 170px 20px; /* Alanı genişleterek fotoğrafın sıkışmasını (daralmasını) önledik */
             text-align: center; 
             clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%); 
         }
@@ -122,7 +122,6 @@
         .product-row:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: transparent; }
         .product-row:hover::before { opacity: 1; }
         
-        /* Görsel Altyapısı */
         .product-image-container { width: 100px; height: 100px; flex-shrink: 0; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border); }
         .product-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
         .product-image-placeholder { color: #94a3b8; font-size: 11px; text-align: center; line-height: 1.4; }
