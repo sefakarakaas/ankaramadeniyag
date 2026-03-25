@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Ankara Madeni Yağ</title>
+    <title>İletişim | Ankara Madeni Yağ & Ankara Yağcı</title>
     
     <meta property="og:title" content="Ankara Madeni Yağ | İletişim ve Adres">
     <meta property="og:description" content="Ostim'deki merkez depomuzdan toptan ve perakende madeni yağ siparişleriniz için bize ulaşın.">
@@ -57,7 +57,7 @@
     <style>
         :root { 
             --primary: #0f2027; --primary-light: #203a43; --accent: #2c5364; 
-            --whatsapp: #10b981; --light: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; 
+            --action: #f59e0b; --whatsapp: #10b981; --light: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; 
             --border: #e2e8f0; --radius: 12px;
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
@@ -72,11 +72,15 @@
         .top-bar-btn { background: rgba(255,255,255,0.1); color: #fff; padding: 8px 16px; border-radius: 20px; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
         .top-bar-btn:hover { background: rgba(255,255,255,0.25); }
         .top-bar-whatsapp { background: var(--whatsapp); color: #fff; }
+        .top-bar-map { background: var(--action); color: #fff; }
+        .top-bar-map:hover { background: #d97706; }
 
         header { background: #fff; box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
+        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; flex-wrap: wrap; }
         .nav-logo { font-size: 22px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 12px; }
         .nav-logo img { height: 40px; }
+        
+        .menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--primary); user-select: none; }
         .nav-menu { list-style: none; display: flex; gap: 24px; }
         .nav-menu a { font-weight: 600; color: var(--text-muted); padding: 8px 0; display: inline-block; }
         .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
@@ -104,9 +108,15 @@
         footer h3 { color: #fff; margin-bottom: 16px; font-size: 24px; }
 
         @media (max-width: 768px) { 
-            .top-bar, .nav-container, .top-bar-right { flex-direction: column; text-align: center; } 
-            .nav-menu { flex-direction: column; width: 100%; gap: 10px; } 
-            .nav-menu a { display: block; padding: 12px; background: #f1f5f9; border-radius: 8px; }
+            .top-bar, .top-bar-right { flex-direction: column; text-align: center; gap: 12px;} 
+            .top-bar-btn { justify-content: center; padding: 12px; font-size: 14px; width: 100%; } 
+            
+            .nav-container { padding: 15px 20px; }
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; width: 100%; flex-direction: column; text-align: center; gap: 10px; margin-top: 15px; }
+            .nav-menu.show { display: flex; }
+            .nav-menu a { display: block; padding: 12px; background: #f1f5f9; border-radius: 8px; font-size: 16px; width: 100%; }
+            
             .contact-header { padding: 60px 20px 80px 20px; }
         }
     </style>
@@ -117,6 +127,7 @@
         <div class="top-bar-left">📍 1229 Sokak No:7 Ostim Yenimahalle / ANKARA</div>
         <div class="top-bar-right">
             <a href="tel:+905015421422" class="top-bar-btn">📞 Bizi Arayın: 0501 542 14 22</a>
+            <a href="https://maps.google.com/?q=1229+Sokak+No:7+Ostim+Yenimahalle+Ankara" target="_blank" class="top-bar-btn top-bar-map">📍 Yol Tarifi Al</a>
         </div>
     </div>
 
@@ -126,9 +137,10 @@
                 <img src="logo.png" alt="Ankara Madeni Yağ Logo" onerror="this.style.display='none'">
                 Ankara Madeni Yağ
             </a>
-            <ul class="nav-menu">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-menu" id="mobile-menu">
                 <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#selector">Ürünlerimiz</a></li>
+                <li><a href="index.html#selector" onclick="toggleMenu()">Ürünlerimiz</a></li>
                 <li><a href="toptan.html" class="toptan-link">📦 Toptan Sipariş</a></li>
                 <li><a href="iletisim.html" class="active">İletişim</a></li>
             </ul>
@@ -178,8 +190,18 @@
     <footer>
         <h3>Ankara Madeni Yağ A.Ş.</h3>
         <p>📍 1229 Sokak No:7 Ostim Sanayi Sitesi / ANKARA</p>
+        
+        <div style="max-width: 800px; margin: 30px auto 10px auto; font-size: 11px; color: #475569; text-align: center; line-height: 1.6;">
+            Ankara Ostim'de toptan ve perakende madeni yağ satışı yapan işletmemiz, en güvenilir <strong>Ankara yağcı</strong> ve madeni yağ tedarikçinizdir. <strong>Ankara yağ</strong> fiyatları, endüstriyel hidrolik yağlar ve Castrol, Shell, Mobil bayilik hizmetleri için depomuzu ziyaret edebilirsiniz. Ankara madeni yağ toptancıları arasında lider konumdayız.
+        </div>
         <p style="margin-top:24px; font-size:13px; border-top:1px solid #334155; padding-top:24px; opacity: 0.7;">© 2026 Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
