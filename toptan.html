@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toptan Teneke ve Varil Siparişi | Ankara Madeni Yağ</title>
+    <title>Toptan Teneke ve Varil Siparişi | Ankara Yağcı & Madeni Yağ</title>
     <meta name="description" content="Türkiye'nin her yerine ambarla toptan madeni yağ, hidrolik, şanzıman ve gres gönderimi. Teneke ve varil bazında en iyi toptan fiyatlar.">
     
     <meta property="og:title" content="Toptan Madeni Yağ Siparişi | Ankara">
@@ -29,8 +29,7 @@
             --primary: #0f2027; --primary-light: #203a43; --accent: #2c5364; 
             --action: #f59e0b; --whatsapp: #10b981; --light: #f8fafc; 
             --text-main: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --radius: 12px;
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background-color: var(--light); color: var(--text-main); line-height: 1.6; }
@@ -41,11 +40,17 @@
         .top-bar-right { display: flex; gap: 12px; }
         .top-bar-btn { background: rgba(255,255,255,0.1); color: #fff; padding: 8px 16px; border-radius: 20px; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
         .top-bar-btn:hover { background: rgba(255,255,255,0.25); }
+        .top-bar-whatsapp { background: var(--whatsapp); color: #fff; }
+        .top-bar-whatsapp:hover { background: #059669; }
+        .top-bar-map { background: var(--action); color: #fff; }
+        .top-bar-map:hover { background: #d97706; }
 
         header { background: #fff; box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
+        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; flex-wrap: wrap; }
         .nav-logo { font-size: 22px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 12px; }
         .nav-logo img { height: 40px; }
+        
+        .menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--primary); user-select: none; }
         .nav-menu { list-style: none; display: flex; gap: 24px; }
         .nav-menu a { font-weight: 600; color: var(--text-muted); padding: 8px 0; }
         .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
@@ -58,7 +63,6 @@
         .seo-content strong { color: var(--text-main); }
 
         .main-container { max-width: 1280px; margin: 0 auto 60px auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
-        
         .selector-box { background: #fff; padding: 32px; border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid var(--border); width: 100%; }
         .selector-title { font-size: 20px; color: var(--primary); margin-bottom: 24px; font-weight: 700; }
         .filter-group { display: flex; flex-wrap: wrap; gap: 24px; }
@@ -69,14 +73,11 @@
 
         .products-area { flex: 2.5; min-width: 300px; }
         .product-list { display: flex; flex-direction: column; gap: 24px; }
-        
-        /* Modern Ürün Kartı ve Görsel Altyapısı */
         .product-row { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; display: flex; gap: 24px; transition: 0.3s; box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
         .product-row::before { content: ''; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: var(--accent); opacity: 0; transition: 0.3s; }
         .product-row:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: transparent; }
         .product-row:hover::before { opacity: 1; }
         
-        /* Görsel için ayrılmış alan */
         .product-image-container { width: 120px; height: 120px; flex-shrink: 0; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border); }
         .product-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
         .product-image-placeholder { color: #94a3b8; font-size: 12px; text-align: center; }
@@ -97,10 +98,21 @@
         .btn-wa-req { background: var(--whatsapp); color: white; border: none; padding: 18px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.3s; }
         .btn-wa-req:hover { background: #059669; transform: translateY(-2px); }
 
+        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 48px 24px; margin-top: 60px; border-top: 4px solid var(--accent); }
+        footer h3 { color: #fff; margin-bottom: 16px; font-size: 24px; font-weight: 700; }
+        footer p { margin-bottom: 8px; font-size: 15px; }
+
         @media (max-width: 768px) { 
-            .top-bar, .nav-container { flex-direction: column; text-align: center; gap: 16px; } 
-            .nav-menu { flex-direction: column; width: 100%; gap: 10px; } 
-            .nav-menu a { display: block; padding: 12px; background: #f1f5f9; border-radius: 8px; }
+            .top-bar { flex-direction: column; gap: 12px; text-align: center; padding: 16px; } 
+            .top-bar-right { flex-direction: column; width: 100%; }
+            .top-bar-btn { justify-content: center; padding: 12px; font-size: 14px; }
+            
+            .nav-container { padding: 15px 20px; }
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; width: 100%; flex-direction: column; text-align: center; gap: 10px; margin-top: 15px; }
+            .nav-menu.show { display: flex; }
+            .nav-menu a { display: block; padding: 12px; background: #f1f5f9; border-radius: 8px; font-size: 16px; width: 100%; }
+            
             .seo-banner { flex-direction: column; text-align: center; padding: 24px; } 
             .product-row { flex-direction: column; align-items: center; text-align: center; padding: 24px; }
             .product-image-container { margin-bottom: 16px; }
@@ -114,6 +126,8 @@
         <div class="top-bar-left">📍 1229 Sokak No:7 Ostim Yenimahalle / ANKARA</div>
         <div class="top-bar-right">
             <a href="tel:+905015421422" class="top-bar-btn">📞 Bizi Arayın: 0501 542 14 22</a>
+            <a href="https://wa.me/905015421422" target="_blank" class="top-bar-btn top-bar-whatsapp">💬 WhatsApp'tan Mesaj At</a>
+            <a href="https://maps.google.com/?q=1229+Sokak+No:7+Ostim+Yenimahalle+Ankara" target="_blank" class="top-bar-btn top-bar-map">📍 Yol Tarifi Al</a>
         </div>
     </div>
 
@@ -123,9 +137,10 @@
                 <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
                 Ankara Madeni Yağ
             </a>
-            <ul class="nav-menu">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-menu" id="mobile-menu">
                 <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#selector">Ürünlerimiz</a></li>
+                <li><a href="index.html#selector" onclick="toggleMenu()">Ürünlerimiz</a></li>
                 <li><a href="toptan.html" class="toptan-link">📦 Toptan Sipariş</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
             </ul>
@@ -149,7 +164,7 @@
                     <label>1. Ürün Grubunu Seçin</label>
                     <select id="mainCategory" class="filter-select" onchange="loadSubCategories()">
                         <option value="">-- Kategori Seçiniz --</option>
-                        <option value="Ağır Hizmet Motor Yağları">Ağır Hizmet Motor Yağları (Kamyon/Tır/İş Makinesi)</option>
+                        <option value="Ağır Hizmet Motor Yağları">Ağır Hizmet Motor Yağları</option>
                         <option value="Hidrolik Yağlar">Endüstriyel Hidrolik Yağlar</option>
                     </select>
                 </div>
@@ -190,24 +205,32 @@
         <h3>Ankara Madeni Yağ A.Ş.</h3>
         <p>📍 Merkez Depo: 1229 Sokak No:7 Ostim / ANKARA</p>
         <p>📞 Toptan Sipariş Hattı: 0501 542 14 22</p>
+
+        <div style="max-width: 800px; margin: 30px auto 10px auto; font-size: 11px; color: #475569; text-align: center; line-height: 1.6;">
+            Ankara Ostim'de toptan ve perakende madeni yağ satışı yapan işletmemiz, en güvenilir <strong>Ankara yağcı</strong> ve madeni yağ tedarikçinizdir. <strong>Ankara yağ</strong> fiyatları, endüstriyel hidrolik yağlar ve Castrol, Shell, Mobil bayilik hizmetleri için depomuzu ziyaret edebilirsiniz. Ankara madeni yağ toptancıları arasında lider konumdayız.
+        </div>
         <p style="margin-top:24px; font-size:13px; border-top:1px solid #334155; padding-top:24px; opacity: 0.7;">© 2026 Tüm Hakları Saklıdır. Kurumsal Toptan Sipariş Portalı.</p>
     </footer>
 
 <script>
-    // Görsel isimleri veritabanına eklendi (imageUrl). Şimdilik boş bırakabilirsin, sistem otomatik yer tutucu atar.
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('show');
+    }
+
     const db = {
         "Ağır Hizmet Motor Yağları": {
             "15W40": [
-                { brand: "Shell", name: "Rimula R4 X 15W-40", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Ağır hizmet iş makineleri, uzun yol kamyonları ve tır filoları için özel olarak geliştirilmiş, üstün koruma sağlayan 3'lü aktif formüle sahip dizel motor yağıdır. Motor aşınmasını engeller, kurum birikimini kontrol altında tutarak motorun nefes almasını sağlar ve zorlu şantiye koşullarında yağ basıncının düşmesini engeller. Egzoz emisyon sistemleriyle uyumlu çalışarak bakım maliyetlerinizi büyük oranda düşürür." },
-                { brand: "Petrol Ofisi", name: "Maximus HD 15W-40", size: "16 Litre Teneke / 205 Litre Varil", imageUrl: "", desc: "Türkiye'nin zorlu iklim ve yol şartlarına göre özel formüle edilmiş, hafriyat ve inşaat firmalarının en çok tercih ettiği yerli ağır hizmet motor yağıdır. Kalın ve dayanıklı film tabakası sayesinde aşırı yük altında çalışan motorların aşınmasını engeller. Yağ eksiltmeyi minimize eden yapısı sayesinde eski nesil iş makinelerinde ve dizel kamyonlarda güvenle kullanılarak filo işletme maliyetlerinde tasarruf sağlar." }
+                { brand: "Shell", name: "Rimula R4 X 15W-40", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Ağır hizmet iş makineleri, uzun yol kamyonları ve tır filoları için özel olarak geliştirilmiş, üstün koruma sağlayan 3'lü aktif formüle sahip dizel motor yağıdır." },
+                { brand: "Petrol Ofisi", name: "Maximus HD 15W-40", size: "16 Litre Teneke / 205 Litre Varil", imageUrl: "", desc: "Türkiye'nin zorlu iklim ve yol şartlarına göre özel formüle edilmiş, hafriyat ve inşaat firmalarının en çok tercih ettiği yerli ağır hizmet motor yağıdır." }
             ],
             "10W40": [
-                { brand: "Shell", name: "Rimula R6 LM 10W-40", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Yeni nesil düşük emisyonlu (Euro 5 ve Euro 6) ağır vasıta motorları ve modern teknoloji iş makineleri için üretilmiş tam sentetik, uzun ömürlü motor yağıdır. Düşük SAPS (Sülfatlanmış kül, fosfor ve sülfür) teknolojisi sayesinde Dizel Partikül Filtresinin (DPF) tıkanmasını önler. Çok uzun yağ değişim aralıklarında dahi ilk günkü performansını koruyarak filoların serviste kalma süresini en aza indirir." }
+                { brand: "Shell", name: "Rimula R6 LM 10W-40", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Yeni nesil düşük emisyonlu (Euro 5 ve Euro 6) ağır vasıta motorları ve modern teknoloji iş makineleri için üretilmiş tam sentetik, uzun ömürlü motor yağıdır." }
             ]
         },
         "Hidrolik Yağlar": {
             "46 Numara": [
-                { brand: "Shell", name: "Tellus S2M 46", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Ekskavatörler, loderler, kepçeler ve mobil iş makineleri için endüstri standardı haline gelmiş aşınma önleyici hidrolik yağdır. Sistemdeki metal parçaların sürtünmesini engelleyerek hidrolik pompaların ömrünü uzatır. Yüksek ısı ve basınç altında bile köpürme yapmaz, su ve nemden kolayca ayrışarak sistemin paslanmasını engeller. Güç iletimini pürüzsüz hale getirerek iş makinesinin hassas hareket etmesini sağlar." }
+                { brand: "Shell", name: "Tellus S2M 46", size: "20 Litre Teneke / 209 Litre Varil", imageUrl: "", desc: "Ekskavatörler, loderler, kepçeler ve mobil iş makineleri için endüstri standardı haline gelmiş aşınma önleyici hidrolik yağdır." }
             ]
         }
     };
@@ -247,10 +270,7 @@
         listDiv.innerHTML = "";
         
         products.forEach(p => {
-            // SEO uyumlu alt etiketi oluşturuluyor
             const seoAltText = `Ankara Toptan ${p.brand} ${p.name} Madeni Yağ`;
-            
-            // Görsel yoksa yer tutucu göster
             const imageHtml = p.imageUrl 
                 ? `<img src="${p.imageUrl}" alt="${seoAltText}" title="${seoAltText}">` 
                 : `<div class="product-image-placeholder">📸<br>Görsel<br>Bekleniyor</div>`;
