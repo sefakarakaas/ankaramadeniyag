@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ankaramdeniyaglar.com.tr/sitemap.xml
+
+# Anahtar Kelime Hedeflemesi
+# 46 numara yağ toptan, 10 numara yağ varil, gres toptan, adblue toptan
