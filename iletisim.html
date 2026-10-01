@@ -1,207 +1,183 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Ankara Madeni Yağ & Ankara Yağcı</title>
-    
-    <meta property="og:title" content="Ankara Madeni Yağ | İletişim ve Adres">
-    <meta property="og:description" content="Ostim'deki merkez depomuzdan toptan ve perakende madeni yağ siparişleriniz için bize ulaşın.">
-    <meta property="og:image" content="https://ankaramdeniyaglar.com.tr/logo.png">
-    <meta property="og:url" content="https://ankaramdeniyaglar.com.tr/iletisim.html">
-    <meta property="og:type" content="website">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX');
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoPartsStore",
-      "name": "Ankara Madeni Yağ",
-      "image": "https://ankaramdeniyaglar.com.tr/logo.png",
-      "@id": "https://ankaramdeniyaglar.com.tr/",
-      "url": "https://ankaramdeniyaglar.com.tr/",
-      "telephone": "+905015421422",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1229 Sokak No:7 Ostim",
-        "addressLocality": "Yenimahalle",
-        "addressRegion": "Ankara",
-        "postalCode": "06374",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.967,
-        "longitude": 32.747
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-        "opens": "08:30",
-        "closes": "18:30"
-      }
-    }
-    </script>
-    
-    <style>
-        :root { 
-            --primary: #0f2027; --primary-light: #203a43; --accent: #2c5364; 
-            --action: #f59e0b; --whatsapp: #10b981; --light: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; 
-            --border: #e2e8f0; --radius: 12px;
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--light); color: var(--text-main); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-
-        .top-bar { background: linear-gradient(90deg, var(--primary), var(--primary-light)); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; font-size: 13px; font-weight: 600; }
-        .top-bar-left { display: flex; align-items: center; gap: 8px; }
-        .top-bar-right { display: flex; gap: 12px; }
-        .top-bar-btn { background: rgba(255,255,255,0.1); color: #fff; padding: 8px 16px; border-radius: 20px; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
-        .top-bar-btn:hover { background: rgba(255,255,255,0.25); }
-        .top-bar-whatsapp { background: var(--whatsapp); color: #fff; }
-        .top-bar-map { background: var(--action); color: #fff; }
-        .top-bar-map:hover { background: #d97706; }
-
-        header { background: #fff; box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; flex-wrap: wrap; }
-        .nav-logo { font-size: 22px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 12px; }
-        .nav-logo img { height: 40px; }
-        
-        .menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--primary); user-select: none; }
-        .nav-menu { list-style: none; display: flex; gap: 24px; }
-        .nav-menu a { font-weight: 600; color: var(--text-muted); padding: 8px 0; display: inline-block; }
-        .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
-        .toptan-link { background: var(--primary-light); color: white !important; padding: 8px 16px !important; border-radius: 6px; }
-
-        .contact-header { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: #fff; padding: 80px 20px; text-align: center; }
-        .contact-header h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
-        .contact-header p { font-size: 18px; opacity: 0.9; }
-
-        .contact-container { max-width: 1280px; margin: -40px auto 60px auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 32px; position: relative; z-index: 10; }
-        
-        .contact-info { flex: 1; min-width: 320px; background: #fff; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
-        .contact-info h3 { color: var(--primary); font-size: 24px; margin-bottom: 24px; font-weight: 700; border-bottom: 2px solid var(--border); padding-bottom: 16px; }
-        .info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; font-size: 15px; color: var(--text-muted); }
-        .info-icon { font-size: 28px; }
-        .info-item strong { display: block; color: var(--text-main); margin-bottom: 4px; font-size: 16px; }
-
-        .btn-contact-wa { display: flex; justify-content: center; align-items: center; gap: 10px; background: var(--whatsapp); color: #fff; padding: 16px; border-radius: 8px; font-weight: 700; font-size: 16px; text-align: center; margin-top: 32px; transition: 0.3s; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2); }
-        .btn-contact-wa:hover { background: #059669; transform: translateY(-2px); }
-
-        .contact-map { flex: 1.5; min-width: 320px; background: #fff; padding: 16px; border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
-        .contact-map iframe { width: 100%; height: 100%; min-height: 400px; border: none; border-radius: 8px; }
-
-        footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 48px 24px; margin-top: 60px; border-top: 4px solid var(--accent); }
-        footer h3 { color: #fff; margin-bottom: 16px; font-size: 24px; }
-
-        @media (max-width: 768px) { 
-            .top-bar, .top-bar-right { flex-direction: column; text-align: center; gap: 12px;} 
-            .top-bar-btn { justify-content: center; padding: 12px; font-size: 14px; width: 100%; } 
-            
-            .nav-container { padding: 15px 20px; }
-            .menu-toggle { display: block; }
-            .nav-menu { display: none; width: 100%; flex-direction: column; text-align: center; gap: 10px; margin-top: 15px; }
-            .nav-menu.show { display: flex; }
-            .nav-menu a { display: block; padding: 12px; background: #f1f5f9; border-radius: 8px; font-size: 16px; width: 100%; }
-            
-            .contact-header { padding: 60px 20px 80px 20px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İletişim ve Adres | Ankara Madeni Yağ · Ostim</title>
+<meta name="description" content="Ankara Madeni Yağ iletişim: 1229 Sokak No:7 Ostim, Yenimahalle / Ankara. Telefon ve WhatsApp 0501 542 14 22. Pazartesi–Cumartesi 08:30–18:30.">
+<link rel="canonical" href="https://ankaramdeniyaglar.com.tr/iletisim">
+<meta name="theme-color" content="#0f2027">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ankara Madeni Yağ">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="İletişim ve Adres | Ankara Madeni Yağ · Ostim">
+<meta property="og:description" content="Ankara Madeni Yağ iletişim: 1229 Sokak No:7 Ostim, Yenimahalle / Ankara. Telefon ve WhatsApp 0501 542 14 22. Pazartesi–Cumartesi 08:30–18:30.">
+<meta property="og:url" content="https://ankaramdeniyaglar.com.tr/iletisim">
+<meta property="og:image" content="https://ankaramdeniyaglar.com.tr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261001">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoPartsStore", "@id": "https://ankaramdeniyaglar.com.tr/#organization", "name": "Ankara Madeni Yağ", "url": "https://ankaramdeniyaglar.com.tr/", "logo": {"@type": "ImageObject", "url": "https://ankaramdeniyaglar.com.tr/logo.png", "width": 512, "height": 512}, "image": "https://ankaramdeniyaglar.com.tr/ankara-madeni-yag-ostim-magaza.webp", "telephone": "+905015421422", "email": "iletisim@ankaramdeniyaglar.com.tr", "address": {"@type": "PostalAddress", "streetAddress": "1229 Sokak No:7 Ostim", "addressLocality": "Yenimahalle", "addressRegion": "Ankara", "postalCode": "06374", "addressCountry": "TR"}, "geo": {"@type": "GeoCoordinates", "latitude": 39.967, "longitude": 32.747}, "hasMap": "https://share.google/hDIRKOJj8jgsklwrn", "areaServed": {"@type": "Country", "name": "Türkiye"}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "08:30", "closes": "18:30"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://ankaramdeniyaglar.com.tr/"}, {"@type": "ListItem", "position": 2, "name": "İletişim", "item": "https://ankaramdeniyaglar.com.tr/iletisim"}]}</script>
 </head>
 <body>
-
-    <div class="top-bar">
-        <div class="top-bar-left">📍 1229 Sokak No:7 Ostim Yenimahalle / ANKARA</div>
-        <div class="top-bar-right">
-            <a href="tel:+905015421422" class="top-bar-btn">📞 Bizi Arayın: 0501 542 14 22</a>
-            <a href="https://maps.google.com/?q=1229+Sokak+No:7+Ostim+Yenimahalle+Ankara" target="_blank" class="top-bar-btn top-bar-map">📍 Yol Tarifi Al</a>
-        </div>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+<div class="topbar">
+  <div class="container">
+    <ul class="topbar-list">
+      <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#map-pin"/></svg><a href="https://share.google/hDIRKOJj8jgsklwrn" target="_blank" rel="noopener">1229 Sokak No:7, Ostim · Yenimahalle / Ankara</a></li>
+      <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg>Pzt–Cmt 08:30–18:30 <span data-open-status hidden></span></li>
+    </ul>
+    <ul class="topbar-list">
+      <li><a href="mailto:iletisim@ankaramdeniyaglar.com.tr"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>iletisim@ankaramdeniyaglar.com.tr</a></li>
+      <li><a href="https://wa.me/905015421422" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a></li>
+    </ul>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Ankara Madeni Yağ ana sayfa">
+      <img class="brand-mark" src="/assets/img/logo.svg" alt="" width="38" height="38">
+      <span class="brand-text"><span class="brand-name">Ankara Madeni Yağ</span><span class="brand-tag">Ostim · Toptan &amp; Perakende</span></span>
+    </a>
+    <nav class="main-nav" id="ana-menu" aria-label="Ana menü">
+      <ul class="nav-list"><li><a href="/">Ana Sayfa</a></li><li><a href="/#urunler">Ürünler</a></li><li><a href="/toptan">Toptan Satış</a></li><li><a href="/blog">Blog & Rehber</a></li><li><a href="/iletisim" aria-current="page">İletişim</a></li></ul>
+      <div class="nav-extra">
+        <a class="btn btn-wa" href="https://wa.me/905015421422" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp'tan yazın</a>
+        <a class="btn btn-dark" href="tel:+905015421422"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>0501 542 14 22</a>
+        <p>Pazartesi–Cumartesi 08:30–18:30</p>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="btn btn-outline btn-sm quote-toggle" data-quote-open aria-controls="quote-drawer" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#list"/></svg>Teklif listesi<span class="quote-count" data-count="0">0</span></button>
+      <a class="btn btn-dark btn-sm btn-call" href="tel:+905015421422"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>0501 542 14 22</a>
+      <button type="button" class="menu-toggle" aria-controls="ana-menu" aria-expanded="false" aria-label="Menüyü aç"><svg class="icon icon-open" aria-hidden="true"><use href="/assets/img/icons.svg#menu"/></svg><svg class="icon icon-close" aria-hidden="true"><use href="/assets/img/icons.svg#x"/></svg></button>
     </div>
+  </div>
+</header>
+<main id="icerik">
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="logo.png" alt="Ankara Madeni Yağ Logo" onerror="this.style.display='none'">
-                Ankara Madeni Yağ
-            </a>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <ul class="nav-menu" id="mobile-menu">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#selector" onclick="toggleMenu()">Ürünlerimiz</a></li>
-                <li><a href="toptan.html" class="toptan-link">📦 Toptan Sipariş</a></li>
-                <li><a href="iletisim.html" class="active">İletişim</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="contact-header">
-        <h1>Bize Ulaşın</h1>
-        <p>Toptan madeni yağ siparişleriniz ve kurumsal teklifleriniz için uzman ekibimiz yanınızda.</p>
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Sayfa yolu"><ol><li><a href="/">Ana Sayfa</a></li><li aria-current="page">İletişim</li></ol></nav>
+    <span class="eyebrow">İletişim</span>
+    <h1>Bize ulaşın</h1>
+    <p>Toptan madeni yağ siparişleriniz, kurumsal teklifleriniz ve ürün danışmanlığı için Ostim'deki ekibimiz yanınızda.</p>
+    <div class="btn-row">
+      <a class="btn btn-wa" href="https://wa.me/905015421422" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp'tan yazın</a>
+      <a class="btn btn-ghost-light" href="tel:+905015421422"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>0501 542 14 22</a>
     </div>
-
-    <div class="contact-container">
-        <div class="contact-info">
-            <h3>İletişim Bilgileri</h3>
-            <div class="info-item">
-                <div class="info-icon">🏢</div>
-                <div>
-                    <strong>Merkez Ofis ve Depo:</strong>
-                    1229 Sokak No:7<br>Ostim Sanayi, Yenimahalle / ANKARA
-                </div>
-            </div>
-            <div class="info-item">
-                <div class="info-icon">📱</div>
-                <div>
-                    <strong>Telefon / WhatsApp:</strong>
-                    <a href="tel:+905015421422" style="color: var(--primary); font-weight:700; font-size: 18px;">0501 542 14 22</a>
-                </div>
-            </div>
-            <div class="info-item">
-                <div class="info-icon">🕒</div>
-                <div>
-                    <strong>Çalışma Saatlerimiz:</strong>
-                    Pazartesi - Cumartesi: 08:30 - 18:30<br>Pazar: Kapalı
-                </div>
-            </div>
-            
-            <a href="https://wa.me/905015421422" target="_blank" class="btn-contact-wa">
-                📱 WhatsApp'tan Hemen Yazın
-            </a>
+  </div>
+</section>
+<section class="section section-white" id="iletisim">
+  <div class="container">
+    
+    <div class="contact-grid">
+      <div class="contact-card">
+        <ul class="contact-list">
+          <li><span class="c-icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#map-pin"/></svg></span><div><small>Adres</small><b>1229 Sokak No:7, Ostim OSB<br>06374 Yenimahalle / Ankara</b></div></li>
+          <li><span class="c-icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg></span><div><small>Telefon / WhatsApp</small><a href="tel:+905015421422">0501 542 14 22</a></div></li>
+          <li><span class="c-icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg></span><div><small>E-posta</small><a href="mailto:iletisim@ankaramdeniyaglar.com.tr">iletisim@ankaramdeniyaglar.com.tr</a></div></li>
+          <li><span class="c-icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg></span><div style="flex:1"><small>Çalışma saatleri</small><table class="hours"><caption class="sr-only">Çalışma saatleri</caption><tbody><tr data-day="1"><td>Pazartesi</td><td>08:30 – 18:30</td></tr><tr data-day="2"><td>Salı</td><td>08:30 – 18:30</td></tr><tr data-day="3"><td>Çarşamba</td><td>08:30 – 18:30</td></tr><tr data-day="4"><td>Perşembe</td><td>08:30 – 18:30</td></tr><tr data-day="5"><td>Cuma</td><td>08:30 – 18:30</td></tr><tr data-day="6"><td>Cumartesi</td><td>08:30 – 18:30</td></tr><tr data-day="0"><td>Pazar</td><td>Kapalı</td></tr></tbody></table></div></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-wa" href="https://wa.me/905015421422" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a>
+          <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=Ankara+Madeni+Ya%C4%9F+1229.+Sokak+No%3A7+Ostim+Yenimahalle+Ankara" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#map-pin"/></svg>Yol tarifi</a>
         </div>
-
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.2625902046467!2d32.744131!3d39.9802425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34bc14d7979eb%3A0x6b4af0dbb2b2b1a5!2sOstim%20Osb%2C%201229.%20Sk.%20No%3A7%2C%2006374%20Yenimahalle%2FAnkara!5e0!3m2!1str!2str!4v1711200000000!5m2!1str!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ankara Madeni Yağ Harita Konumu"></iframe>
-        </div>
+      </div>
+      <div class="map-frame"><iframe src="https://maps.google.com/maps?q=Ankara%20Madeni%20Ya%C4%9F%201229.%20Sokak%20No:7%20Ostim&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Ankara Madeni Yağ harita konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
     </div>
-
-    <footer>
-        <h3>Ankara Madeni Yağ A.Ş.</h3>
-        <p>📍 1229 Sokak No:7 Ostim Sanayi Sitesi / ANKARA</p>
-        
-        <div style="max-width: 800px; margin: 30px auto 10px auto; font-size: 11px; color: #475569; text-align: center; line-height: 1.6;">
-            Ankara Ostim'de toptan ve perakende madeni yağ satışı yapan işletmemiz, en güvenilir <strong>Ankara yağcı</strong> ve madeni yağ tedarikçinizdir. <strong>Ankara yağ</strong> fiyatları, endüstriyel hidrolik yağlar ve Castrol, Shell, Mobil bayilik hizmetleri için depomuzu ziyaret edebilirsiniz. Ankara madeni yağ toptancıları arasında lider konumdayız.
-        </div>
-        <p style="margin-top:24px; font-size:13px; border-top:1px solid #334155; padding-top:24px; opacity: 0.7;">© 2026 Tüm Hakları Saklıdır.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('show');
-        }
-    </script>
+  </div>
+</section>
+<section class="section">
+  <div class="container split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Mesaj gönderin</span>
+      <h2 class="display" style="font-size:clamp(30px,4vw,44px);text-transform:uppercase;margin:10px 0 14px">Size dönüş yapalım</h2>
+      <p style="color:var(--muted);font-size:17px;margin-bottom:22px">Formdaki bilgiler hazır bir mesaj olarak WhatsApp'ınızda veya e-posta uygulamanızda açılır. Çalışma saatlerimiz içinde en kısa sürede yanıtlıyoruz.</p>
+      <div class="split-media" style="aspect-ratio:16/10"><img src="/assets/img/magaza-800.webp" width="800" height="600" loading="lazy" alt="Ankara Madeni Yağ Ostim mağazası"></div>
+    </div>
+    <form class="contact-card" data-wa-form="Merhaba Ankara Madeni Yağ, web sitenizden yazıyorum:">
+      <div class="form-grid">
+        <div class="field"><label for="i-ad">Ad soyad *</label><input id="i-ad" name="ad" data-label="Ad soyad" required autocomplete="name"></div>
+        <div class="field"><label for="i-tel">Telefon *</label><input id="i-tel" name="telefon" data-label="Telefon" type="tel" required autocomplete="tel" inputmode="tel"></div>
+        <div class="field full"><label for="i-konu">Konu</label><select id="i-konu" name="konu" data-label="Konu"><option value="">Seçin</option><option>Fiyat / stok bilgisi</option><option>Toptan teklif</option><option>Ürün danışmanlığı</option><option>Sevkiyat</option><option>Diğer</option></select></div>
+        <div class="field full"><label for="i-mesaj">Mesajınız *</label><textarea id="i-mesaj" name="mesaj" data-label="Mesaj" required></textarea></div>
+      </div>
+      <div class="btn-row" style="margin-top:16px">
+        <button type="submit" class="btn btn-wa" data-via="wa"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp ile gönder</button>
+        <button type="submit" class="btn btn-outline" data-via="mail"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>E-posta ile gönder</button>
+      </div>
+      <p class="form-note">Bilgileriniz sitemizde saklanmaz.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand"><img class="brand-mark" src="/assets/img/logo.svg" alt="" width="38" height="38" loading="lazy"><span class="brand-text"><span class="brand-name">Ankara Madeni Yağ</span><span class="brand-tag">Ostim · Toptan &amp; Perakende</span></span></a>
+        <p class="footer-about">Ankara Ostim'den Türkiye geneline; hidrolik yağ, motor yağı, dişli yağı, gres ve AdBlue'da bidondan IBC tanka toptan ve perakende tedarik.</p>
+      </div>
+      <div>
+        <h2>Sayfalar</h2>
+        <ul>
+          <li><a href="/">Ana Sayfa</a></li>
+          <li><a href="/#urunler">Ürünler</a></li>
+          <li><a href="/toptan">Toptan Satış</a></li>
+          <li><a href="/blog">Blog &amp; Rehber</a></li>
+          <li><a href="/iletisim">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ürün Grupları</h2>
+        <ul><li><a href="/?kategori=hidrolik#urunler">Hidrolik Yağlar</a></li><li><a href="/?kategori=motor#urunler">Motor Yağları</a></li><li><a href="/?kategori=disli#urunler">Şanzıman & Dişli</a></li><li><a href="/?kategori=gres#urunler">Gresler</a></li><li><a href="/?kategori=is-makinesi#urunler">İş Makinesi & Traktör</a></li><li><a href="/?kategori=adblue#urunler">AdBlue</a></li><li><a href="/?kategori=antifriz#urunler">Antifriz</a></li></ul>
+      </div>
+      <div>
+        <h2>İletişim</h2>
+        <ul class="footer-contact">
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#map-pin"/></svg><span>1229 Sokak No:7, Ostim OSB<br>06374 Yenimahalle / Ankara</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg><a href="tel:+905015421422">0501 542 14 22</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg><a href="mailto:iletisim@ankaramdeniyaglar.com.tr">iletisim@ankaramdeniyaglar.com.tr</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg><span>Pazartesi–Cumartesi 08:30–18:30<br>Pazar kapalı</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-seo">Ankara Ostim'de toptan ve perakende madeni yağ satışı yapan işletmemiz, güvenilir <strong>Ankara yağcı</strong> ve madeni yağ tedarikçinizdir. <strong>Ankara yağ</strong> fiyatları, endüstriyel hidrolik yağlar, <strong>toptan 46 numara hidrolik yağ</strong>, gres, dişli yağı ve AdBlue ile Castrol, Shell, Mobil ve Petrol Ofisi ürünleri için Ostim'deki depomuzu ziyaret edebilir, WhatsApp'tan teklif alabilirsiniz.</p>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Ankara Madeni Yağ · Tüm hakları saklıdır.</span>
+      <span>Ostim OSB, Yenimahalle / Ankara</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/905015421422?text=Merhaba%20Ankara%20Madeni%20Ya%C4%9F%2C%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg><span>WhatsApp</span></a>
+<nav class="mobile-bar" aria-label="Hızlı iletişim">
+  <a href="tel:+905015421422"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>Ara</a>
+  <a class="mb-wa" href="https://wa.me/905015421422?text=Merhaba%20Ankara%20Madeni%20Ya%C4%9F%2C%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a>
+  <button type="button" data-quote-open aria-controls="quote-drawer" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#list"/></svg>Teklif listesi<span class="quote-count" data-count="0">0</span></button>
+</nav>
+<div class="drawer-backdrop" id="quote-backdrop" data-quote-close hidden></div>
+<aside class="drawer" id="quote-drawer" role="dialog" aria-modal="true" aria-labelledby="quote-title" hidden>
+  <div class="drawer-head">
+    <h2 id="quote-title"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#list"/></svg>Teklif listesi</h2>
+    <button type="button" class="icon-btn" data-quote-close aria-label="Listeyi kapat"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#x"/></svg></button>
+  </div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot">
+    <a class="btn btn-wa btn-block" data-quote-send target="_blank" rel="noopener" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>Listeyi WhatsApp'tan gönder</a>
+    <button type="button" class="btn btn-outline btn-sm btn-block" data-quote-clear hidden>Listeyi temizle</button>
+    <p class="form-note">Liste yalnızca bu cihazda saklanır. Fiyat ve stok bilgisini WhatsApp üzerinden iletiyoruz.</p>
+  </div>
+</aside>
+<script src="/assets/js/site.js?v=20261001" defer></script>
 </body>
 </html>
